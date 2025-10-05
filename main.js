@@ -1,6 +1,5 @@
 (function () {
     const calendar = document.getElementById('calendar');
-
     const now = new Date();
     let selectedDate = null;
     let currentYear = now.getFullYear();
@@ -11,12 +10,66 @@
         const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni",
             "Juli", "August", "September", "Oktober", "November", "Dezember"];
 
-        // Header mit Monat und Jahr
-         const title = document.createElement('div');
+        // Steuerelemente für Monat und Jahr
+        const controls = document.createElement('div');
+        controls.style.display = "flex";
+        controls.style.justifyContent = "space-between";
+        controls.style.alignItems = "center";
+        controls.style.marginBottom = "0.5em";
+
+        // Jahr zurück
+        const prevYear = document.createElement('button');
+        prevYear.textContent = "<<";
+        prevYear.onclick = () => {
+            currentYear--;
+            renderCalendar(currentYear, currentMonth);
+        };
+        controls.appendChild(prevYear);
+
+        // Monat zurück
+        const prevMonth = document.createElement('button');
+        prevMonth.textContent = "<";
+        prevMonth.onclick = () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            renderCalendar(currentYear, currentMonth);
+        };
+        controls.appendChild(prevMonth);
+
+        // Titel
+        const title = document.createElement('div');
         title.className = "calendar-title";
         title.textContent = monthNames[month] + ' ' + year;
-        calendar.appendChild(title);
-        
+        title.style.flexGrow = "1";
+        title.style.textAlign = "center";
+        controls.appendChild(title);
+
+        // Monat vor
+        const nextMonth = document.createElement('button');
+        nextMonth.textContent = ">";
+        nextMonth.onclick = () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            renderCalendar(currentYear, currentMonth);
+        };
+        controls.appendChild(nextMonth);
+
+        // Jahr vor
+        const nextYear = document.createElement('button');
+        nextYear.textContent = ">>";
+        nextYear.onclick = () => {
+            currentYear++;
+            renderCalendar(currentYear, currentMonth);
+        };
+        controls.appendChild(nextYear);
+
+        calendar.appendChild(controls);
 
         // Wochentage Kopf
         const table = document.createElement('table');
@@ -33,33 +86,25 @@
 
         // Tage des Monats
         const tbody = document.createElement('tbody');
-
-        // Erster Tag des Monats (Wochentag)
         const firstDay = new Date(year, month, 1);
         let startDay = firstDay.getDay(); // Sonntag = 0 ... Samstag = 6
         startDay = (startDay === 0) ? 7 : startDay; // auf Montag=1 umstellen
 
-        // Tage im Monat ermitteln
         const daysInMonth = new Date(year, month + 1, 0).getDate();
 
         let row = document.createElement('tr');
         let dayCount = 1;
-
-        // Leere Zellen für Tage vor dem 1. des Monats
         for (let i = 1; i < startDay; i++) {
             const cell = document.createElement('td');
             row.appendChild(cell);
         }
-
-        // Fülle den Kalender mit Tagen
         for (let i = startDay; i <= 7; i++) {
-            const cell = createDayCell(dayCount);
+            const cell = createDayCell(dayCount, year, month);
             row.appendChild(cell);
             dayCount++;
         }
         tbody.appendChild(row);
 
-        // Weitere Wochen
         while (dayCount <= daysInMonth) {
             row = document.createElement('tr');
             for (let i = 1; i <= 7; i++) {
@@ -67,7 +112,7 @@
                     const emptyCell = document.createElement('td');
                     row.appendChild(emptyCell);
                 } else {
-                    const cell = createDayCell(dayCount);
+                    const cell = createDayCell(dayCount, year, month);
                     row.appendChild(cell);
                     dayCount++;
                 }
@@ -79,10 +124,11 @@
         calendar.appendChild(table);
     }
 
-    function createDayCell(day) {
+    function createDayCell(day, cellYear, cellMonth) {
         const cell = document.createElement('td');
         cell.textContent = day;
-        const isToday = (day === now.getDate() && currentMonth === now.getMonth() && currentYear === now.getFullYear());
+        const isToday =
+            (day === now.getDate() && cellMonth === now.getMonth() && cellYear === now.getFullYear());
         if (isToday) {
             cell.style.border = '1px solid #007BFF';
             cell.style.fontWeight = 'bold';
@@ -93,16 +139,15 @@
             }
             cell.classList.add('selected');
             selectedDate = cell;
-            loadArticlesForDate(currentYear, currentMonth, day);
-            // Hier kannst du eine Aktion auslösen, z.B. Tag merken oder anzeigen
-            console.log(`Ausgewählter Tag: ${day}.${currentMonth + 1}.${currentYear}`);
+            loadArticlesForDate(cellYear, cellMonth, day);
+            console.log(`Ausgewählter Tag: ${day}.${cellMonth + 1}.${cellYear}`);
         });
         return cell;
     }
 
     renderCalendar(currentYear, currentMonth);
 })();
-
+  
 function loadArticlesForDate(year, month, day) {
     const newsArticleDiv = document.getElementById('newsarticle');
     // z.B. Dateiformat: articles-2025-10-05.html
