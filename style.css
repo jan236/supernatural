@@ -24,9 +24,9 @@ header {
     grid-template-columns: 220px 1fr 300px; /* Links / Mitte / Rechts */
     max-width: 1140px;
     margin: 0 auto;
-    padding-top: 4em; /* Platz für Header */
-    gap: 4em;
-    min-height: 60vh;
+    padding-top: 2em; /* Platz für Header */
+    gap: 2em;
+    min-height: 20vh;
     align-items: flex-start;
 }
 
