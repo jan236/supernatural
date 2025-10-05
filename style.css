@@ -16,6 +16,14 @@ html, body {
         flex: 1; /* Hauptinhalt wächst und zieht Footer nach unten */
     }
 
+#page-wrapper {
+    flex: 1; /* Nimmt verfügbaren Raum ein */
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Kritisch für Flexbox-Kind */
+}
+
+
 
 header {
     position: fixed;
@@ -45,11 +53,11 @@ header {
 .layout {
     display: grid;
     grid-template-columns: 20em 4fr 20em;
-    max-width: 100%;
+    flex-grow: 1; /* nimmt max. Platz ein */
     margin: 0 auto;
     padding-top: 1em;
     gap: 0.5em;
-    min-height: 10vh;
+    min-height: 0;
     align-items: flex-start;
 }
 
@@ -156,16 +164,14 @@ section {
 }
 
 footer {
+    padding: 0.5rem 1rem;
     background-color: #222;
     color: #eee;
     text-align: center;
-    padding: 0.5rem 1rem;
     font-size: 0.9rem;
     box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
     user-select: none;
-    position: relative; /* kein fixed */
-    width: 100%;
-    /* Kein flex-shrink */
+    flex-shrink: 0; /* Verhindert schrumpfen */
 }
 
 
