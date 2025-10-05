@@ -54,7 +54,6 @@ header {
 }
 
 #sidebarleft, #sidebarright {
-    position: relative;
     top: 11em;
     width: 20em;
     max-height: calc(100vh - 110px);
