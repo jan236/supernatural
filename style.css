@@ -43,7 +43,7 @@ header {
 
 #sidebarleft {
     position: fixed;
-    top: 10.5em; /* unter dem Header platzieren, ggf. anpassen */
+    top: 11em; /* unter dem Header platzieren, ggf. anpassen */
     left: 0;
     width: 200px; /* oder passend zur Werbespalte */
     height: calc(100vh - 110px); /* Gesamte Höhe abzüglich Header */
@@ -56,7 +56,7 @@ header {
 
 #sidebarright {
     position: fixed;
-    top: 10.5em; /* unter dem Header */
+    top: 11em; /* unter dem Header */
     right: 0;
     margin-top: 2em; /* Abstand über Werbung */
     width: 300px; /* je nach Bedarf */
@@ -139,19 +139,19 @@ section {
 #calendar {
     width: 260px;
     background: whitesmoke;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border: 0.1em solid #ccc;
+    box-shadow: 0 0 0.2em rgba(0,0,0,0.05);
     font-family: Arial, sans-serif;
     padding: 0.2em;
-    margin-top: 2em;
+    margin-top: 0.1em;
     margin-bottom: 0.1em;
 }
 
 .calendar-title {
     text-align: center;
     font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+    margin-bottom: 0.2em;
+    font-size: 1rem;
 }
 
 #calendar td {
