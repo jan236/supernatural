@@ -1,8 +1,8 @@
 body {
     margin: 0;
-    font-family: "Georgia", serif;
-    color: #222;
     background: #fff;
+    color: #222;
+    font-family: "Georgia", serif;
 }
 
 header {
@@ -13,105 +13,104 @@ header {
     background: #fff;
     z-index: 10;
     border-bottom: 2px solid #000;
-    padding: 1.5rem 0 1rem 0;
+    padding: 2rem 0 1rem 0;
     text-align: center;
     font-size: 2rem;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+.layout {
+    display: grid;
+    grid-template-columns: 220px 1fr 300px; /* Links / Mitte / Rechts */
+    max-width: 1140px;
     margin: 0 auto;
-    max-width: 1200px;
-    padding-top: 120px; /* Platz für fixierten Header */
+    padding-top: 110px; /* Platz für Header */
+    gap: 40px;
+    min-height: 90vh;
+    align-items: flex-start;
 }
 
-/* Linke Werbung */
-#left-sidebar {
-    flex: 1;
+.sidebar {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    position: sticky;
-    top: 140px;
-    min-width: 180px;
-    height: fit-content;
-    padding: 1rem 0;
+    align-items: center;
 }
 
-#ad-left {
-    width: 160px;
-    background: #f2f2f2;
+    .sidebar.left {
+        /* Optionale weitere Stile für die linke Spalte */
+    }
+
+    .sidebar.right {
+        /* Optionale weitere Stile für die rechte Spalte */
+    }
+
+.ad {
+    background: #fafafa;
     border: 1px dashed #aaa;
-    color: #555;
+    padding: 24px 12px;
     text-align: center;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    width: 180px;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #444;
 }
 
-/* Hauptbereich */
 main {
-    flex: 2;
-    padding: 1.5rem 2rem;
-    max-width: 700px;
-    background: #fff;
-    overflow-y: auto;
-    min-height: 70vh;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 75vh;
 }
 
 #newsarticle {
-    margin: 0 auto;
+    width: 100%;
     max-width: 700px;
+    margin: 0 auto;
 }
 
-/* Rechte Werbung und Kalender */
-#right-sidebar {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: sticky;
-    top: 140px;
-    min-width: 300px;
-    height: fit-content;
-    padding: 1rem 0;
-}
-
-#ad-right {
-    width: 260px;
-    background: #f2f2f2;
-    border: 1px dashed #aaa;
-    color: #555;
-    text-align: center;
-    padding: 1rem;
-    margin-bottom: 1rem;
-}
-
-#calendar {
-    width: 280px;
+section {
     background: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    font-family: Arial, sans-serif;
+    border-bottom: 1px solid #ddd;
+    padding: 2rem 2rem 1.5rem 2rem;
     margin-bottom: 2rem;
 }
 
+    section h2 {
+        font-family: "Times New Roman", serif;
+        font-weight: bold;
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+    }
+
+    section p {
+        font-size: 1.1rem;
+        text-align: justify;
+        margin-top: 0;
+    }
+
+#calendar {
+    width: 260px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    margin-top: 16px;
+}
+
 /* Responsive Anpassung */
-@media (max-width: 900px) {
-    .container {
-        flex-direction: column;
-        padding: 0 10px;
+@media (max-width: 1000px) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 
-    #left-sidebar, #right-sidebar, #ad-left, #ad-right, #calendar {
-        position: static;
-        min-width: 100%;
+    .sidebar.left, .sidebar.right {
+        display: none;
     }
 
-    main {
+    #newsarticle {
         max-width: 100%;
-        padding: 1rem;
+        padding: 0 1rem;
     }
 }
