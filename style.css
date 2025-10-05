@@ -174,41 +174,66 @@ footer {
 }
 
 @media (max-width: 600px) {
+    /* Alles block und mittig */
+    .layout {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        text-align: center; /* Zentrale Ausrichtung */
+    }
 
     header {
         position: fixed;
         width: 100%;
-        height: 3.5rem; /* ausreichend auch für kleinere Geräte */
-        background: rgba(255,255,255,0.9);
+        height: 3.5rem;
+        background: rgba(255, 255, 255, 0.9);
         z-index: 1000;
         transition: opacity 0.4s ease;
+        text-align: center; /* Headerzentrierung */
+        padding: 0.5rem 0;
     }
 
     body {
-        padding-top: 3.5rem; /* platz unter Header für sichtbaren Content */
+        padding-top: 4rem; /* Ausreichend Platz für fixierten Header */
         margin: 0;
     }
 
     #calendar {
-        position: relative;
-        max-height: 40vh; /* begrenzt die Höhe, damit scrollbar */
-        overflow-y: auto; /* vertikal scrollbar */
-        width: 95%;
         margin: 1rem auto;
-        background: whitesmoke;
+        max-height: 40vh;
+        width: 90%; /* Breiter und zentriert */
+        overflow-y: auto; /* Vertikales Scrollen */
         box-shadow: none;
         border: 1px solid #ccc;
+        text-align: center;
     }
 
     main {
-        padding: 1rem 1rem 3rem 1rem;
-        margin: 0 auto;
         width: 95%;
+        margin: 0 auto 2rem auto;
+        padding: 1rem;
+        text-align: center; /* Zentrierter Hauptinhalt */
     }
 
     #sidebarleft, #sidebarright {
         display: none; /* Seitenleisten ausblenden */
     }
+
+    .ads {
+        width: 90%;
+        margin: 1rem auto;
+        padding: 0;
+        background: none;
+        border: none;
+        text-align: center;
+    }
+
+        /* Bilder in der Werbung und Artikeln ebenfalls zentrieren und responsiv */
+        #newsarticle img, .ads img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
 }
-
-
