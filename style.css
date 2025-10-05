@@ -1,22 +1,8 @@
-/* Allgemeine Schriftarten und Farben */
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
 body {
-    display: flex;
-    justify-content: center; /* horizontal zentrieren */
-    align-items: center; /* vertikal zentrieren */
-    max-width: 900px;
     margin: 0;
-    padding-top: 8rem;
     font-family: "Georgia", serif;
     color: #222;
-    line-height: 1.6;
-      border: solid;
-    border-style: solid;
-    border-color: black;
+    background: #fff;
 }
 
 header {
@@ -25,124 +11,107 @@ header {
     left: 0;
     width: 100%;
     background: #fff;
-    z-index: 999;
+    z-index: 10;
     border-bottom: 2px solid #000;
-    padding: 1rem 0;
+    padding: 1.5rem 0 1rem 0;
     text-align: center;
+    font-size: 2rem;
 }
 
-
-/* Navigation */
-nav a {
-    color: #000;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    font-weight: bold;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-top: 120px; /* Platz für fixierten Header */
 }
 
-    nav a:hover {
-        text-decoration: underline;
-    }
+/* Linke Werbung */
+#left-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: sticky;
+    top: 140px;
+    min-width: 180px;
+    height: fit-content;
+    padding: 1rem 0;
+}
+
+#ad-left {
+    width: 160px;
+    background: #f2f2f2;
+    border: 1px dashed #aaa;
+    color: #555;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
 
 /* Hauptbereich */
 main {
-    max-width: 900px;
-    margin: 2rem auto;
+    flex: 2;
+    padding: 1.5rem 2rem;
+    max-width: 700px;
+    background: #fff;
+    overflow-y: auto;
+    min-height: 70vh;
+    box-sizing: border-box;
 }
 
-/* Zeitungsstil für Artikelabschnitt */
-section {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-    section h2 {
-        font-family: "Times New Roman", serif;
-        font-weight: bold;
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-    }
-
-    section p {
-        font-size: 1rem;
-        text-align: justify;
-        margin-top: 0;
-    }
 #newsarticle {
     margin: 0 auto;
-    max-width: 900px;
-    padding: 1rem;
+    max-width: 700px;
 }
 
+/* Rechte Werbung und Kalender */
+#right-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: sticky;
+    top: 140px;
+    min-width: 300px;
+    height: fit-content;
+    padding: 1rem 0;
+}
+
+#ad-right {
+    width: 260px;
+    background: #f2f2f2;
+    border: 1px dashed #aaa;
+    color: #555;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
 
 #calendar {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
     width: 280px;
-    background: white;
+    background: #fff;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     font-family: Arial, sans-serif;
-    user-select: none;
-    z-index: 1000;
-    padding: 10px;
+    margin-bottom: 2rem;
 }
 
-#calendar header {
-        text-align: center;
-        font-weight: bold;
-        margin-bottom: 10px;
+/* Responsive Anpassung */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        padding: 0 10px;
     }
 
-  #calendar table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-#calendar th, #calendar td {
-        width: 14.28%;
-        text-align: center;
-        padding: 5px;
-        cursor: pointer;
-        border-radius: 4px;
-    }
-
-       main, #calendar td:hover {
-            background-color: #eee;
-        }
-
-   main, #calendar .selected {
-        background-color: #007BFF;
-        color: white;
-        font-weight: bold;
-    }
-
-
-/* Footer */
-footer {
-    border-top: 2px solid #000;
-    padding: 1rem 0;
-    text-align: center;
-    font-size: 0.875rem;
-    color: #666;
-}
-
-/* Responsive: kleinere Bildschirme */
-@media (max-width: 600px) {
-    body {
-        padding: 0 0.5rem;
+    #left-sidebar, #right-sidebar, #ad-left, #ad-right, #calendar {
+        position: static;
+        min-width: 100%;
     }
 
     main {
-        margin: 1rem auto;
         max-width: 100%;
-    }
-
-    section h2 {
-        font-size: 1.4rem;
+        padding: 1rem;
     }
 }
