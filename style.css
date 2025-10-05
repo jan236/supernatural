@@ -76,6 +76,7 @@ header {
 }
 
 main {
+    top: 15em;
     margin-left: 220px; /* mindestens Breite von #sidebarleft */
     margin-right: 300px; /* mindestens Breite von #sidebarright */
     padding: 1rem;
