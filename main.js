@@ -16,8 +16,7 @@
         title.className = "calendar-title";
         title.textContent = monthNames[month] + ' ' + year;
         calendar.appendChild(title);
-        header.textContent = monthNames[month] + ' ' + year;
-        calendar.appendChild(header);
+        
 
         // Wochentage Kopf
         const table = document.createElement('table');
