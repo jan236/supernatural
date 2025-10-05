@@ -57,7 +57,8 @@ header {
     top: 11em; /* unter dem Header platzieren, ggf. anpassen */
     left: 0;
     width: 20em; /* oder passend zur Werbespalte */
-    height: calc(100vh - 110px); /* Gesamte Höhe abzüglich Header */
+    max-height: calc(100vh - 110px); /* maximale Höhe */
+    overflow-y: auto; /* bei Überlauf scrollbar */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,7 +73,8 @@ header {
     right: 0;
     margin-top: 2em; /* Abstand über Werbung */
     width: 20em; /* je nach Bedarf */
-    height: calc(100vh - 110px);
+    max-height: calc(100vh - 110px); /* maximale Höhe */
+    overflow-y: auto; /* bei Überlauf scrollbar */
     display: flex;
     flex-direction: column;
     align-items: center;
