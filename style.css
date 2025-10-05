@@ -108,7 +108,7 @@ section {
         margin-top: 0;
     }
 
-#calendar {
+.calendar {
     width: 260px;
     background: #fff;
     border: 1px solid #ccc;
