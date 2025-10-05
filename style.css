@@ -1,16 +1,27 @@
-body {
+
+html, body {
     margin: 0;
-    background: whitesmoke;
-    color: #222;
     font-family: "Georgia", serif;
+    height: 100%; /* Wichtig für das Hintergrundbild, damit es den ganzen Bildschirm abdeckt */
+    margin: 0;
+    padding: 0;
+    background-image: url('Pfad/zum/Bild.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed; /* Optional: Bild bleibt beim Scrollen fixiert */
+    background-color: transparent; /* Transparenter Hintergrund */
 }
+
+
+
 
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: whitesmoke;
+    background: transparent !important;
     color: #222;
     z-index: 10;
     border-bottom: 0.1em solid #000;
@@ -50,7 +61,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: whitesmoke;
+    background: transparent !important;
     padding: 1em;
 }
 
@@ -65,13 +76,13 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: whitesmoke;
+    background: transparent !important;
     overflow-x: visible;
     padding: 1em;
 }
 
 .ads {
-    background: whitesmoke;
+    background: transparent !important;
     padding: 0.1em 0.1em;
     text-align: center;
     width: 180px;
@@ -113,7 +124,7 @@ main {
 
 
 section {
-    background: whitesmoke;
+    background: transparent !important;
     border-bottom: 1px solid #ddd;
     padding: 2rem 2rem 1.5rem 2rem;
     margin-bottom: 2rem;
@@ -141,7 +152,7 @@ section {
 
 #calendar {
     width: 260px;
-    background: whitesmoke;
+    background: transparent !important;
     border: 0.1em solid #ccc;
     box-shadow: 0 0 0.2em rgba(0,0,0,0.05);
     font-family: Arial, sans-serif;
