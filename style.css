@@ -25,6 +25,10 @@ header {
         font-size: 1rem;
     }
 
+    header.transparent {
+        opacity: 0.7; /* Hier kannst du den Transparenzgrad anpassen (z.B. 0.6 bis 0.9) */
+        transition: opacity 0.4s ease;
+    }
 
 .layout {
     display:grid;
@@ -96,11 +100,14 @@ main {
 }
 
     #newsarticle img {
-        max-width: 50%; /* Bilder nehmen nur die Hälfte der Breite des Containers ein */
-        height: auto; /* Bildhöhe proportional anpassen */
+        max-width: 50%;
+        max-height: 20rem;
+        height: auto;
         display: block;
-        margin: 0.5rem auto; /* Zentrierter Abstand über und unter dem Bild */
+        margin: 1rem auto;
     }
+
+
 
 section {
     background: whitesmoke;
