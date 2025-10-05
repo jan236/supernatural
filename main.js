@@ -8,15 +8,14 @@
 
     function renderCalendar(year, month) {
         calendar.innerHTML = '';
-
+        const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni",
+            "Juli", "August", "September", "Oktober", "November", "Dezember"];
 
         // Header mit Monat und Jahr
          const title = document.createElement('div');
         title.className = "calendar-title";
         title.textContent = monthNames[month] + ' ' + year;
         calendar.appendChild(title);
-        const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni",
-            "Juli", "August", "September", "Oktober", "November", "Dezember"];
         header.textContent = monthNames[month] + ' ' + year;
         calendar.appendChild(header);
 
