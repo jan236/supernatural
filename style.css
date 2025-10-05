@@ -1,7 +1,7 @@
 body {
     margin: 0;
     background: #fff;
-    background-color:antiquewhite;
+    background-color:black;
     color: #222;
     font-family: "Georgia", serif;
 }
@@ -12,7 +12,7 @@ header {
     left: 0;
     width: 100%;
     background: #fff;
-    background-color: antiquewhite;
+    background-color: black;
     z-index: 10;
     border-top: 0.2em solid #000;
     border-bottom: 0.2em solid #000;
@@ -62,7 +62,7 @@ header {
 .ad {
     background: #fafafa;
     border: 1px dashed #aaa;
-    padding: 24px 12px;
+    padding:0.5em 0.2em;
     text-align: center;
     width: 180px;
     margin-bottom: 2rem;
