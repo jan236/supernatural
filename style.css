@@ -173,19 +173,49 @@ footer {
     user-select: none; /* Verhindert, dass man Text im Footer markiert */
 }
 
-    /* Responsive Anpassung */
-    @media (max-width: 1000px) {
-        .layout {
-            grid-template-columns: 1fr;
-            gap: 0;
-        }
-
-        .sidebar.left, .sidebar.right {
-            display: none;
-        }
-
-        #newsarticle {
-            max-width: 100%;
-            padding: 0 1rem;
-        }
+@media (max-width: 600px) {
+    /* Grid auflösen, alles wird vertikal gestapelt */
+    .layout {
+        display: block; /* kein Grid */
+        padding-top: 1rem;
+        margin: 0 auto;
+        max-width: 100%;
     }
+
+    /* Seitenleisten ausblenden, weil sonst überdeckt */
+    #sidebarleft, #sidebarright {
+        position: static; /* Entferne fixed */
+        width: 100%; /* Vollbreite wenn sichtbar, ansonsten hide */
+        height: auto;
+        margin: 0;
+        padding: 0 1rem;
+        display: none; /* komplett entfernen */
+        overflow: visible;
+    }
+
+    /* Kalender unter Header und über den Artikeln */
+    #calendar {
+        width: 90%; /* Breite anpassen */
+        margin: 1rem auto;
+        position: static; /* Position normal */
+        box-shadow: none;
+    }
+
+    /* Hauptbereich übernimmt volle Breite */
+    main {
+        margin: 0;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    /* Werbung innerhalb Main sichtbar machen, kann flexibel zwischen Artikeln stehen */
+    .ads {
+        display: block;
+        width: 90%;
+        margin: 2rem auto;
+        border: none; /* ggf. Ränder anzupassen */
+        background: none;
+        padding: 0;
+    }
+}
+
