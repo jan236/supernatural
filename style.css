@@ -171,7 +171,7 @@ footer {
 
 @media (max-width: 600px) {
     .layout {
-        display: block; /* alles untereinander */
+        display: block; /* Alle drei Bereiche untereinander */
         margin: 0 auto;
         padding: 0 1rem;
         max-width: 100%;
@@ -179,21 +179,13 @@ footer {
     }
 
     #sidebarleft, #sidebarright {
-        display: block;
+        display: block; /* Volle Breite */
         width: 100%;
-        height: auto;
+        height: auto; /* Höhe passt sich Inhalt an */
         margin: 0 auto 1rem auto;
         position: relative;
         overflow: visible;
-    }
-
-    #calendar {
-        margin: 1rem auto;
-        max-height: 40vh;
-        width: 90%;
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        text-align: center;
+        padding: 1rem 0;
     }
 
     main {
