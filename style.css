@@ -62,7 +62,7 @@ header {
     flex-direction: column;
     align-items: center;
     background: transparent !important;
-    padding: 1em;
+    padding: 2em;
 }
 
 
@@ -78,7 +78,7 @@ header {
     align-items: center;
     background: transparent !important;
     overflow-x: visible;
-    padding: 1em;
+    padding: 2em;
 }
 
 .ads {
@@ -176,6 +176,7 @@ footer {
     color: #eee; /* helle Schrift */
     text-align: center; /* Texte zentrieren */
     padding: 0.5rem 1rem; /* Innenabstand oben/unten 0.5rem, links/rechts 1rem */
+    margin: 0.5rem;
     font-size: 0.9rem; /* etwas kleinere Schrift */
     position: fixed; /* immer am Bildschirm unten */
     bottom: 0;
@@ -184,6 +185,7 @@ footer {
     box-shadow: 0 -2px 4px rgba(0,0,0,0.3); /* leichter Schatten oben */
     z-index: 1000; /* immer oben anzeigen */
     user-select: none; /* Verhindert, dass man Text im Footer markiert */
+
 }
 
 @media (max-width: 600px) {
