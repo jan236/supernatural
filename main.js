@@ -163,7 +163,7 @@ function loadArticlesForDate(year, month, day) {
         });
 }
 
-function loadAdsForDate(year, month, day) {
+function loadAds() {
     const ad1 = document.getElementById('ad1');
     const ad2 = document.getElementById('ad2');
     const ad3 = document.getElementById('ad3');
@@ -174,10 +174,9 @@ function loadAdsForDate(year, month, day) {
     const ad8 = document.getElementById('ad8');
     const ad9 = document.getElementById('ad9');
     const ad10 = document.getElementById('ad10');
-    const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-    const fileName = `advertising-${dateStr}.html`;
+   
 
-    fetch(fileName)
+    fetch('advertising.html')
         .then(response => {
             if (!response.ok) throw new Error("Keine Werbung");
             return response.text();
@@ -256,7 +255,7 @@ window.addEventListener('load', () => {
                 cell.classList.add('selected'); // optional: CSS für markierten Tag
                 // Artikel laden
                 loadArticlesForDate(year, month, day);
-                loadAdsForDate(year, month, day);
+                loadAds();
             }
         });
     }
