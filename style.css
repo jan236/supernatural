@@ -79,7 +79,7 @@ header {
     max-width: 70%; /* Bilder nehmen nur die Hälfte der Breite des Containers ein */
     height: auto; /* Bildhöhe proportional anpassen */
     display: block;
-    margin: 0.2rem auto; /* Zentrierter Abstand über und unter dem Bild */
+    margin: 0.5rem auto; /* Zentrierter Abstand über und unter dem Bild */
 }
 
 main {
@@ -95,7 +95,7 @@ main {
 
 #newsarticle {
     width: 100%;
-    max-width: 90vw;
+    max-width: 70vw;
     margin: 0 auto;
 }
 
