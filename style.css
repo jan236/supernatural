@@ -130,6 +130,12 @@ section {
         margin-top: 0;
     }
 
+#newsarticle section h2,
+#newsarticle section p {
+    text-align: center;
+}
+
+
 #calendar {
     width: 260px;
     background: whitesmoke;
