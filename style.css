@@ -64,7 +64,7 @@ header {
     overflow-x: visible;
 }
 
-#ad1, #ad2 {
+.ads {
     background: whitesmoke;
     border: 1px dashed #aaa;
     padding: 0.5em 0.2em;
