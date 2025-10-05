@@ -56,8 +56,9 @@ header {
 #sidebarleft, #sidebarright {
    
     margin-top: 11em;
-    width: 20em;
-    max-height: calc(100vh - 110px);
+    min-width: 15vw;
+    width: 15em;
+   min-height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
