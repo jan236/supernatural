@@ -73,10 +73,10 @@ header {
     padding: 0.1em 0.1em;
     text-align: center;
     width: 180px;
-    margin-bottom: 0.2rem;
-    font-size: 1rem;
+    margin-bottom: 0.1rem;
+    font-size: 0.8rem;
     color: #444;
-    max-width: 75%; /* Bilder nehmen nur die Hälfte der Breite des Containers ein */
+    max-width: 70%; /* Bilder nehmen nur die Hälfte der Breite des Containers ein */
     height: auto; /* Bildhöhe proportional anpassen */
     display: block;
     margin: 0.2rem auto; /* Zentrierter Abstand über und unter dem Bild */
