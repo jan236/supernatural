@@ -154,7 +154,7 @@ function loadArticlesForDate(year, month, day) {
     const fileName = `articles-${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
     fetch(fileName)
         .then(response => {
-            if (!response.ok) throw new Error("Datei nicht gefunden");
+            if (!response.ok) throw new Error("kein Artikel gefunden");
             return response.text();
         })
         .then(html => {
@@ -166,20 +166,24 @@ function loadArticlesForDate(year, month, day) {
 }
 
 function loadAdsForDate(year, month, day) {
-    const adDiv = document.getElementById('ad-container');
+    const adContainers = document.querySelectorAll('.ads'); // alle Werbung-Container
     const adFileName = `ad-${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
-    fetch(adFileName)
-        .then(response => {
-            if (!response.ok) throw new Error("Datei nicht gefunden");
-            return response.text();
-        })
-        .then(html => {
-            adDiv.innerHTML = html;
-        })
-        .catch(error => {
-            adDiv.innerHTML = `<p>Keine Werbung vorhanden</p>`;
-        });
+
+    adContainers.forEach(adDiv => {
+        fetch(adFileName)
+            .then(response => {
+                if (!response.ok) throw new Error("Datei nicht gefunden");
+                return response.text();
+            })
+            .then(html => {
+                adDiv.innerHTML = html; // Inhalt in den jeweiligen Container
+            })
+            .catch(error => {
+                adDiv.innerHTML = `<p>Keine Werbung vorhanden</p>`;
+            });
+    });
 }
+
 
 
 window.addEventListener('scroll', () => {
