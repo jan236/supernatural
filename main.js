@@ -165,23 +165,23 @@ function loadArticlesForDate(year, month, day) {
 }
 
 function loadAdsForDate(year, month, day) {
-    const adContainers = document.querySelectorAll('.ads');
-    const adFileName = `ad-${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
+    const adBlock = document.querySelector('.ads'); // z.B. ad1 oder ad2
+    const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    const filename = `advertising-${dateStr}.html`; // Hier der geänderte Dateiname mit "advertising-"
 
-    adContainers.forEach(adDiv => {
-        fetch(adFileName)
-            .then(response => {
-                if (!response.ok) throw new Error("Datei nicht gefunden");
-                return response.text();
-            })
-            .then(html => {
-                adDiv.innerHTML = html;
-            })
-            .catch(error => {
-                adDiv.innerHTML = '<p>Keine Werbung vorhanden</p>';
-            });
-    });
+    fetch(filename)
+        .then(response => {
+            if (!response.ok) throw new Error("Keine Werbung");
+            return response.text();
+        })
+        .then(html => {
+            adBlock.innerHTML = html;
+        })
+        .catch(() => {
+            adBlock.innerHTML = `<p>Keine Werbung vorhanden</p>`;
+        });
 }
+
 
 
 window.addEventListener('scroll', () => {
