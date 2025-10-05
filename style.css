@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background: #fff;
     background-color:antiquewhite;
     color: #222;
     font-family: "Georgia", serif;
@@ -10,7 +11,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color:antiquewhite;
+    background: #fff;
+    background-color: antiquewhite;
     z-index: 10;
     border-top: 0.2em solid #000;
     border-bottom: 0.2em solid #000;
@@ -43,18 +45,18 @@ header {
     }
 
 
-    #sidebarright {
-        position: fixed;
-        top: 4em; /* unter dem Header */
-        right: 0;
-        width: 300px; /* je nach Bedarf */
-        height: 20em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: #fff;
-        overflow-x: visible;
-    }
+#sidebarright {
+    position: fixed;
+    top: 4em; /* unter dem Header */
+    right: 0;
+    width: 300px; /* je nach Bedarf */
+    height: calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    overflow-x: visible;
+}
 
 
 .ad {
