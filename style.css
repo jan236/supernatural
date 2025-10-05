@@ -96,7 +96,7 @@ main {
 
 #newsarticle {
     width: 100%; /* Voll flexibel */
-    max-width: 800px; /* Begrenzung, damit nicht zu breit */
+    max-width: 80em; /* Begrenzung, damit nicht zu breit */
     margin: 0 auto;
 }
 
@@ -179,7 +179,7 @@ footer {
     body {
         padding-top: 5rem; /* etwas mehr Platz zum fixierten Header */
     }
-
+    
     main {
         width: 95%;
         margin: 0 auto 2rem auto;
@@ -195,7 +195,7 @@ footer {
         border: 1px solid #ccc;
         text-align: center;
     }
-
+    
     #sidebarleft, #sidebarright {
         display: none;
     }
@@ -209,10 +209,10 @@ footer {
         text-align: center;
     }
 
-        #newsarticle img, .ads img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
+    #newsarticle img, .ads img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
 }
