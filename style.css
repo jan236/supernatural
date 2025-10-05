@@ -181,7 +181,7 @@ footer {
     text-align: center; /* Texte zentrieren */
     padding: 0rem 0rem; /* Innenabstand oben/unten 0.5rem, links/rechts 1rem */
     font-size: 0.9rem; /* etwas kleinere Schrift */
-    position: fixed; /* immer am Bildschirm unten */
+    position: relative; /* immer am Bildschirm unten */
     bottom: 0;
     left: 0;
     width: 100%; /* volle Breite */
