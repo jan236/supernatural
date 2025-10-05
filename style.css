@@ -32,8 +32,8 @@ header {
 
 .layout {
     display: grid;
-    grid-template-columns: 220px 1fr 300px;
-    max-width: 1140px;
+    grid-template-columns: 20em 2fr 20em;
+    max-width: 100%;
     margin: 0 auto;
     padding-top: 1em;
     gap: 0.5em;
