@@ -1,5 +1,5 @@
 html, body {
-    height: 100%;
+    min-height: 100dvh;
     margin: 0; /* kein Margin zum Rand */
     padding: 0;
     font-family: 'Georgia', 'Palatino Linotype', Garamond, serif;
@@ -164,7 +164,7 @@ footer {
     box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
     user-select: none;
     flex-shrink: 0; /* Verhindert schrumpfen */
-    position: absolute;
+    
 }
 
 
