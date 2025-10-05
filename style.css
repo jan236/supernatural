@@ -175,7 +175,7 @@ footer {
     background-color: #222; /* dunkler Hintergrund */
     color: #eee; /* helle Schrift */
     text-align: center; /* Texte zentrieren */
-    padding: 0.5rem 1rem; /* Innenabstand oben/unten 0.5rem, links/rechts 1rem */
+    padding: 0rem 0rem; /* Innenabstand oben/unten 0.5rem, links/rechts 1rem */
     margin: 0.5rem;
     font-size: 0.9rem; /* etwas kleinere Schrift */
     position: fixed; /* immer am Bildschirm unten */
