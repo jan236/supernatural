@@ -31,41 +31,20 @@ header {
     }
 
 .layout {
-    display:grid;
-    grid-template-columns: 220px 1fr 300px; /* Links / Mitte / Rechts */
+    display: grid;
+    grid-template-columns: 220px 1fr 300px;
     max-width: 1140px;
     margin: 0 auto;
-    padding-top: 1em; /* Platz für Header */
+    padding-top: 1em;
     gap: 0.5em;
     min-height: 10vh;
     align-items: flex-start;
 }
 
-#sidebarleft {
-    position: fixed;
-    top: 11em; /* unter dem Header platzieren, ggf. anpassen */
-    left: 0;
-    width: 200px; /* oder passend zur Werbespalte */
-    height: calc(100vh - 110px); /* Gesamte Höhe abzüglich Header */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#sidebarleft, #sidebarright {
+    position: relative; /* nicht mehr fixed */
+    height: auto;
     background: whitesmoke;
-}
-
-
-#sidebarright {
-    position: fixed;
-    top: 11em; /* unter dem Header */
-    right: 0;
-    margin-top: 2em; /* Abstand über Werbung */
-    width: 300px; /* je nach Bedarf */
-    height: calc(100vh - 110px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: whitesmoke;
-    overflow-x: visible;
 }
 
 .ads {
@@ -83,14 +62,8 @@ header {
 }
 
 main {
-    margin-top: 10em;
-    margin-left: 220px; /* mindestens Breite von #sidebarleft */
-    margin-right: 300px; /* mindestens Breite von #sidebarright */
+    margin: 0;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 75vh;
 }
 
 #newsarticle {
@@ -175,29 +148,20 @@ footer {
 
 @media (max-width: 600px) {
     .layout {
+        display: block; /* alles untereinander */
+        margin: 0 auto;
+        padding: 0 1rem;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    #sidebarleft, #sidebarright {
         display: block;
         width: 100%;
-        padding: 0;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    header {
-        position: fixed;
-        border-bottom: 0.2em solid #000;
-        width: 100%;
-        height: 3.5rem;
-        background: rgba(255,255,255,0.9);
-        z-index: 1000;
-        transition: opacity 0.4s ease;
-        text-align: center;
-        margin: 0.2em;
-        padding: 0.5rem 0;
-    }
-
-    body {
-        padding-top: 4rem; /* Platz für fixierten Header */
-        margin: 0;
+        height: auto;
+        margin: 0 auto 1rem auto;
+        position: relative;
+        overflow: visible;
     }
 
     #calendar {
@@ -205,35 +169,14 @@ footer {
         max-height: 40vh;
         width: 90%;
         overflow-y: auto;
-        box-shadow: none;
         border: 1px solid #ccc;
         text-align: center;
     }
 
     main {
-        width: 95%;
+        width: 100%;
         margin: 0 auto 2rem auto;
-        padding: 1rem;
+        padding: 1rem 0;
         text-align: center;
     }
-
-    #sidebarleft, #sidebarright {
-        display: none;
-    }
-
-    .ads {
-        width: 90%;
-        margin: 1rem auto;
-        padding: 0;
-        background: none;
-        border: none;
-        text-align: center;
-    }
-
-        #newsarticle img, .ads img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
 }
