@@ -39,7 +39,7 @@ header {
 
 #sidebarleft {
     position: fixed;
-    top: 10em; /* unter dem Header platzieren, ggf. anpassen */
+    top: 10.5em; /* unter dem Header platzieren, ggf. anpassen */
     left: 0;
     width: 200px; /* oder passend zur Werbespalte */
     height: calc(100vh - 110px); /* Gesamte Höhe abzüglich Header */
@@ -52,7 +52,7 @@ header {
 
 #sidebarright {
     position: fixed;
-    top: 10em; /* unter dem Header */
+    top: 10.5em; /* unter dem Header */
     right: 0;
     margin-top: 2em; /* Abstand über Werbung */
     width: 300px; /* je nach Bedarf */
@@ -72,6 +72,10 @@ header {
     margin-bottom: 2rem;
     font-size: 1.1rem;
     color: #444;
+    max-width: 50%; /* Bilder nehmen nur die Hälfte der Breite des Containers ein */
+    height: auto; /* Bildhöhe proportional anpassen */
+    display: block;
+    margin: 0.5rem auto; /* Zentrierter Abstand über und unter dem Bild */
 }
 
 main {
