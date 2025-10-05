@@ -1,21 +1,20 @@
-
 html, body {
-    margin: 1.0rem;
+    height: 100%;
+    margin: 0; /* kein Margin zum Rand */
+    padding: 0;
     font-family: 'Georgia', 'Palatino Linotype', Garamond, serif;
-    height: 100%; /* Wichtig für das Hintergrundbild, damit es den ganzen Bildschirm abdeckt */
-    margin: 0;
     display: flex;
     flex-direction: column;
-    padding-bottom: 3rem; /* Platz für Footer */
     background-image: url('Pictures/Zeitung.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-attachment: fixed; /* Optional: Bild bleibt beim Scrollen fixiert */
-    background-color: transparent; /* Transparenter Hintergrund */
+    background-attachment: fixed;
 }
 
-
+    body > .layout, main {
+        flex: 1; /* Hauptinhalt wächst und zieht Footer nach unten */
+    }
 
 
 header {
@@ -54,32 +53,15 @@ header {
     align-items: flex-start;
 }
 
-#sidebarleft {
+#sidebarleft, #sidebarright {
     position: relative;
-    top: 11em; /* unter dem Header platzieren, ggf. anpassen */
-    left: 0;
-    width: 20em; /* oder passend zur Werbespalte */
-    max-height: calc(100vh - 110px); /* maximale Höhe */
+    top: 11em;
+    width: 20em;
+    max-height: calc(100vh - 110px);
     display: flex;
     flex-direction: column;
     align-items: center;
     background: transparent !important;
-    padding: 2em;
-}
-
-
-#sidebarright {
-    position: relative;
-    top: 11em; /* unter dem Header */
-    right: 0;
-    margin-top: 2em; /* Abstand über Werbung */
-    width: 20em; /* je nach Bedarf */
-    max-height: calc(100vh - 110px); /* maximale Höhe */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: transparent !important;
-    overflow-x: visible;
     padding: 2em;
 }
 
@@ -98,10 +80,9 @@ header {
 
 main {
     margin-top: 10em;
-    margin-left: 1em; /* mindestens Breite von #sidebarleft */
-    margin-right: 1em; /* mindestens Breite von #sidebarright */
+    margin-left: 1em;
+    margin-right: 1em;
     padding: 1rem;
-    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -175,21 +156,18 @@ section {
 }
 
 footer {
-    flex-shrink: 0;
-    background-color: #222; /* dunkler Hintergrund */
-    color: #eee; /* helle Schrift */
-    text-align: center; /* Texte zentrieren */
-    padding: 0rem 0rem; /* Innenabstand oben/unten 0.5rem, links/rechts 1rem */
-    font-size: 0.9rem; /* etwas kleinere Schrift */
-    position: relative; /* immer am Bildschirm unten */
-    bottom: 0;
-    left: 0;
-    width: 100%; /* volle Breite */
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.3); /* leichter Schatten oben */
-    z-index: 1000; /* immer oben anzeigen */
-    user-select: none; /* Verhindert, dass man Text im Footer markiert */
-
+    background-color: #222;
+    color: #eee;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
+    user-select: none;
+    position: relative; /* kein fixed */
+    width: 100%;
+    /* Kein flex-shrink */
 }
+
 
 @media (max-width: 600px) {
     .layout {
