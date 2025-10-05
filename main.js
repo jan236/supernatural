@@ -200,8 +200,10 @@ window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (window.scrollY > 5) { // ab 50 Pixel scrollen
         header.classList.add('shrink');
+        header.classList.add('transparent');
     } else {
         header.classList.remove('shrink');
+        header.classList.remove('transparent')
     }
 });
 
