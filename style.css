@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    background: #fff;
-    color: antiquewhite;  
+    background-color:antiquewhite;
+    color: #222;
     font-family: "Georgia", serif;
 }
 
@@ -10,7 +10,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: #fff;
+    background-color:antiquewhite;
     z-index: 10;
     border-top: 0.2em solid #000;
     border-bottom: 0.2em solid #000;
