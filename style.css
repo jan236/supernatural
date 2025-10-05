@@ -20,19 +20,19 @@ header {
 }
 
 .layout {
-    display: grid;
+    display:grid;
     grid-template-columns: 220px 1fr 300px; /* Links / Mitte / Rechts */
     max-width: 1140px;
     margin: 0 auto;
-    padding-top: 40px; /* Platz für Header */
-    gap: 20px;
+    padding-top: 4em; /* Platz für Header */
+    gap: 4em;
     min-height: 60vh;
     align-items: flex-start;
 }
 
     #sidebarleft {
         position: fixed;
-        top: 20px; /* unter dem Header platzieren, ggf. anpassen */
+        top: 4em; /* unter dem Header platzieren, ggf. anpassen */
         left: 0;
         width: 200px; /* oder passend zur Werbespalte */
         height: calc(100vh - 110px); /* Gesamte Höhe abzüglich Header */
@@ -45,10 +45,10 @@ header {
 
     #sidebarright {
         position: fixed;
-        top: 20px; /* unter dem Header */
+        top: 4em; /* unter dem Header */
         right: 0;
         width: 300px; /* je nach Bedarf */
-        height: calc(100vh - 110px);
+        height: 20em;
         display: flex;
         flex-direction: column;
         align-items: center;
