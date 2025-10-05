@@ -173,6 +173,8 @@ function loadAdsForDate(year, month, day) {
     const ad6 = document.getElementById('ad6');
     const ad7 = document.getElementById('ad7');
     const ad8 = document.getElementById('ad8');
+    const ad9 = document.getElementById('ad9');
+    const ad10 = document.getElementById('ad10');
     const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
     const fileName = `advertising-${dateStr}.html`;
 
@@ -194,6 +196,8 @@ function loadAdsForDate(year, month, day) {
             const ad6Content = tempDiv.querySelector('#ad6-content');
             const ad7Content = tempDiv.querySelector('#ad7-content');
             const ad8Content = tempDiv.querySelector('#ad8-content');
+            const ad9Content = tempDiv.querySelector('#ad9-content');
+            const ad10Content = tempDiv.querySelector('#ad10-content');
 
             ad1.innerHTML = ad1Content ? ad1Content.innerHTML : '<p>Keine Werbung </p>';
             ad2.innerHTML = ad2Content ? ad2Content.innerHTML : '<p>Keine Werbung </p>';
@@ -203,6 +207,8 @@ function loadAdsForDate(year, month, day) {
             ad6.innerHTML = ad6Content ? ad6Content.innerHTML : '<p>Keine Werbung </p>';
             ad7.innerHTML = ad7Content ? ad7Content.innerHTML : '<p>Keine Werbung </p>';
             ad8.innerHTML = ad8Content ? ad8Content.innerHTML : '<p>Keine Werbung </p>';
+            ad9.innerHTML = ad9Content ? ad9Content.innerHTML : '<p>Keine Werbung </p>';
+            ad10.innerHTML = ad10Content ? ad10Content.innerHTML : '<p>Keine Werbung </p>';
         })
         .catch(() => {
             ad1.innerHTML = '<p>Keine Werbung </p>';
@@ -213,6 +219,8 @@ function loadAdsForDate(year, month, day) {
             ad6.innerHTML = '<p>Keine Werbung </p>';
             ad7.innerHTML = '<p>Keine Werbung </p>';
             ad8.innerHTML = '<p>Keine Werbung </p>';
+            ad9.innerHTML = '<p>Keine Werbung </p>';
+            ad10.innerHTML = '<p>Keine Werbung </p>';
         });
 }
 
