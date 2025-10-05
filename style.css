@@ -32,7 +32,7 @@ header {
 
 .layout {
     display: grid;
-    grid-template-columns: 20em 2fr 20em;
+    grid-template-columns: 20em 4fr 20em;
     max-width: 100%;
     margin: 0 auto;
     padding-top: 1em;
@@ -93,7 +93,11 @@ main {
     min-height: 75vh;
 }
 
-
+#newsarticle {
+    width: 100%;
+    max-width: 90vw;
+    margin: 0 auto;
+}
 
     #newsarticle img {
         max-width: 90%;
