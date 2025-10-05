@@ -102,8 +102,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 75vh;
-    min-width: 46vw;
+    min-height: 70vh;
+    min-width: 40vw;
 }
 
 #newsarticle {
