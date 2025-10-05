@@ -175,20 +175,29 @@ footer {
 
 @media (max-width: 600px) {
     .layout {
-        display: block; /* alles untereinander */
+        display: block;
+        width: 100%;
+        padding: 0;
         margin: 0 auto;
-        padding: 0 1rem;
-        max-width: 100%;
         text-align: center;
     }
 
-    #sidebarleft, #sidebarright {
-        display: block;
+    header {
+        position: fixed;
+        border-bottom: 0.2em solid #000;
         width: 100%;
-        height: auto;
-        margin: 0 auto 1rem auto;
-        position: relative;
-        overflow: visible;
+        height: 3.5rem;
+        background: rgba(255,255,255,0.9);
+        z-index: 1000;
+        transition: opacity 0.4s ease;
+        text-align: center;
+        margin: 0.2em;
+        padding: 0.5rem 0;
+    }
+
+    body {
+        padding-top: 4rem; /* Platz für fixierten Header */
+        margin: 0;
     }
 
     #calendar {
@@ -196,14 +205,35 @@ footer {
         max-height: 40vh;
         width: 90%;
         overflow-y: auto;
+        box-shadow: none;
         border: 1px solid #ccc;
         text-align: center;
     }
 
     main {
-        width: 100%;
+        width: 95%;
         margin: 0 auto 2rem auto;
-        padding: 1rem 0;
+        padding: 1rem;
         text-align: center;
     }
+
+    #sidebarleft, #sidebarright {
+        display: none;
+    }
+
+    .ads {
+        width: 90%;
+        margin: 1rem auto;
+        padding: 0;
+        background: none;
+        border: none;
+        text-align: center;
+    }
+
+        #newsarticle img, .ads img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
 }
