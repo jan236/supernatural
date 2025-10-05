@@ -23,7 +23,7 @@ header {
     grid-template-columns: 220px 1fr 300px; /* Links / Mitte / Rechts */
     max-width: 1140px;
     margin: 0 auto;
-    padding-top: 110px; /* Platz für Header */
+    padding-top: 60px; /* Platz für Header */
     gap: 40px;
     min-height: 90vh;
     align-items: flex-start;
