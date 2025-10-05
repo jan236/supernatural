@@ -39,7 +39,7 @@ header {
 
 #sidebarleft {
     position: fixed;
-    top: 14em; /* unter dem Header platzieren, ggf. anpassen */
+    top: 12em; /* unter dem Header platzieren, ggf. anpassen */
     left: 0;
     width: 200px; /* oder passend zur Werbespalte */
     height: calc(100vh - 110px); /* Gesamte Höhe abzüglich Header */
@@ -52,7 +52,7 @@ header {
 
 #sidebarright {
     position: fixed;
-    top: 14em; /* unter dem Header */
+    top: 12em; /* unter dem Header */
     right: 0;
     margin-top: 2em; /* Abstand über Werbung */
     width: 300px; /* je nach Bedarf */

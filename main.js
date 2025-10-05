@@ -165,22 +165,33 @@ function loadArticlesForDate(year, month, day) {
 }
 
 function loadAdsForDate(year, month, day) {
-    const adBlock = document.querySelector('.ads'); // z.B. ad1 oder ad2
+    const ad1 = document.getElementById('ad1');
+    const ad2 = document.getElementById('ad2');
     const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-    const filename = `advertising-${dateStr}.html`; // Hier der geänderte Dateiname mit "advertising-"
+    const fileName = `advertising-${dateStr}.html`;
 
-    fetch(filename)
+    fetch(fileName)
         .then(response => {
             if (!response.ok) throw new Error("Keine Werbung");
             return response.text();
         })
         .then(html => {
-            adBlock.innerHTML = html;
+            // Temporäres div um den Inhalt zu parsen
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = html;
+
+            const ad1Content = tempDiv.querySelector('#ad1-content');
+            const ad2Content = tempDiv.querySelector('#ad2-content');
+
+            ad1.innerHTML = ad1Content ? ad1Content.innerHTML : '<p>Keine Werbung links</p>';
+            ad2.innerHTML = ad2Content ? ad2Content.innerHTML : '<p>Keine Werbung rechts</p>';
         })
         .catch(() => {
-            adBlock.innerHTML = `<p>Keine Werbung vorhanden</p>`;
+            ad1.innerHTML = '<p>Keine Werbung links</p>';
+            ad2.innerHTML = '<p>Keine Werbung rechts</p>';
         });
 }
+
 
 
 
