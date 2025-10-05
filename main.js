@@ -167,6 +167,12 @@ function loadArticlesForDate(year, month, day) {
 function loadAdsForDate(year, month, day) {
     const ad1 = document.getElementById('ad1');
     const ad2 = document.getElementById('ad2');
+    const ad3 = document.getElementById('ad3');
+    const ad4 = document.getElementById('ad4');
+    const ad5 = document.getElementById('ad5');
+    const ad6 = document.getElementById('ad6');
+    const ad7 = document.getElementById('ad7');
+    const ad8 = document.getElementById('ad8');
     const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
     const fileName = `advertising-${dateStr}.html`;
 
@@ -182,13 +188,31 @@ function loadAdsForDate(year, month, day) {
 
             const ad1Content = tempDiv.querySelector('#ad1-content');
             const ad2Content = tempDiv.querySelector('#ad2-content');
+            const ad3Content = tempDiv.querySelector('#ad3-content');
+            const ad4Content = tempDiv.querySelector('#ad4-content');
+            const ad5Content = tempDiv.querySelector('#ad5-content');
+            const ad6Content = tempDiv.querySelector('#ad6-content');
+            const ad7Content = tempDiv.querySelector('#ad7-content');
+            const ad8Content = tempDiv.querySelector('#ad8-content');
 
-            ad1.innerHTML = ad1Content ? ad1Content.innerHTML : '<p>Keine Werbung links</p>';
-            ad2.innerHTML = ad2Content ? ad2Content.innerHTML : '<p>Keine Werbung rechts</p>';
+            ad1.innerHTML = ad1Content ? ad1Content.innerHTML : '<p>Keine Werbung </p>';
+            ad2.innerHTML = ad2Content ? ad2Content.innerHTML : '<p>Keine Werbung </p>';
+            ad3.innerHTML = ad3Content ? ad3Content.innerHTML : '<p>Keine Werbung </p>';
+            ad4.innerHTML = ad4Content ? ad4Content.innerHTML : '<p>Keine Werbung </p>';
+            ad5.innerHTML = ad5Content ? ad5Content.innerHTML : '<p>Keine Werbung </p>';
+            ad6.innerHTML = ad6Content ? ad6Content.innerHTML : '<p>Keine Werbung </p>';
+            ad7.innerHTML = ad7Content ? ad7Content.innerHTML : '<p>Keine Werbung </p>';
+            ad8.innerHTML = ad8Content ? ad8Content.innerHTML : '<p>Keine Werbung </p>';
         })
         .catch(() => {
-            ad1.innerHTML = '<p>Keine Werbung links</p>';
-            ad2.innerHTML = '<p>Keine Werbung rechts</p>';
+            ad1.innerHTML = '<p>Keine Werbung </p>';
+            ad2.innerHTML = '<p>Keine Werbung </p>';
+            ad3.innerHTML = '<p>Keine Werbung </p>';
+            ad4.innerHTML = '<p>Keine Werbung </p>';
+            ad5.innerHTML = '<p>Keine Werbung </p>';
+            ad6.innerHTML = '<p>Keine Werbung </p>';
+            ad7.innerHTML = '<p>Keine Werbung </p>';
+            ad8.innerHTML = '<p>Keine Werbung </p>';
         });
 }
 
