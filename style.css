@@ -16,14 +16,6 @@ html, body {
         flex: 1; /* Hauptinhalt wächst und zieht Footer nach unten */
     }
 
-#page-wrapper {
-    flex: 1; /* Nimmt verfügbaren Raum ein */
-    display: flex;
-    flex-direction: column;
-    min-height: 0; /* Kritisch für Flexbox-Kind */
-}
-
-
 
 header {
     position: fixed;
@@ -172,6 +164,7 @@ footer {
     box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
     user-select: none;
     flex-shrink: 0; /* Verhindert schrumpfen */
+    position: absolute;
 }
 
 
