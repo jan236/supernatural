@@ -37,7 +37,7 @@ header {
     }
 
     header.transparent {
-        opacity: 0.7; /* Hier kannst du den Transparenzgrad anpassen (z.B. 0.6 bis 0.9) */
+        opacity: 0.4; /* Hier kannst du den Transparenzgrad anpassen (z.B. 0.6 bis 0.9) */
         transition: opacity 0.4s ease;
     }
 
