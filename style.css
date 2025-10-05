@@ -41,19 +41,41 @@ header {
     align-items: center;
     background: whitesmoke;
 }
-
-
 #sidebarright {
     position: fixed;
-    top: 4em; /* unter dem Header */
+    top: 4em;
     right: 0;
-    width: 300px; /* je nach Bedarf */
+    width: 320px; /* Breit genug für Werbung + Kalender */
     height: calc(100vh - 110px);
     display: flex;
     flex-direction: column;
     align-items: center;
     background: whitesmoke;
     overflow-x: visible;
+    padding: 1em;
+}
+
+#ad-placeholder-right, .ad {
+    width: 280px; /* Annähernd gleiche Breite wie Kalender */
+    margin-bottom: 1.5em;
+}
+
+#calendar {
+    width: 280px;
+    background: whitesmoke;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    font-family: Arial, sans-serif;
+    padding: 1em;
+    margin-top: 0; /* Entferne zu großen Abstand */
+}
+
+
+.calendar-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
 }
 
 
@@ -102,22 +124,7 @@ section {
         margin-top: 0;
     }
 
-#calendar {
-    width: 260px;
-    background: whitesmoke;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    font-family: Arial, sans-serif;
-    padding: 1em;
-    margin-top: 16px;
-}
 
-.calendar-title {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
 footer {
     background: whitesmoke;
     color: #eee; /* helle Schrift */
