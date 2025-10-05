@@ -76,7 +76,7 @@ header {
     margin-bottom: 0.1rem;
     font-size: 0.8rem;
     color: #444;
-    max-width: 70%; /* Bilder nehmen nur die Hälfte der Breite des Containers ein */
+    max-width: 80%; /* Bilder nehmen nur die Hälfte der Breite des Containers ein */
     height: auto; /* Bildhöhe proportional anpassen */
     display: block;
     margin: 0.5rem auto; /* Zentrierter Abstand über und unter dem Bild */
@@ -85,7 +85,8 @@ header {
 
 main {
     margin-top: 10em;
-
+    margin-left: 1em; /* mindestens Breite von #sidebarleft */
+    margin-right: 1em; /* mindestens Breite von #sidebarright */
     padding: 1rem;
     display: flex;
     flex-direction: column;
