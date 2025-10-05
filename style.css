@@ -4,7 +4,7 @@ html, body {
     font-family: 'Georgia', 'Palatino Linotype', Garamond, serif;
     height: 100%; /* Wichtig für das Hintergrundbild, damit es den ganzen Bildschirm abdeckt */
     margin: 0;
-    padding: 1rem;
+    padding-bottom: 3rem; /* Platz für Footer */
     background-image: url('Pictures/Zeitung.jpg');
     background-repeat: no-repeat;
     background-position: center center;
