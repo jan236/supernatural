@@ -140,6 +140,7 @@
             cell.classList.add('selected');
             selectedDate = cell;
             loadArticlesForDate(cellYear, cellMonth, day);
+            loadAdsForDate(year, month, day);
             console.log(`Ausgewählter Tag: ${day}.${cellMonth + 1}.${cellYear}`);
         });
         return cell;
@@ -164,6 +165,23 @@ function loadArticlesForDate(year, month, day) {
             newsArticleDiv.innerHTML = `<section><h2>Keine Meldungen für dieses Datum</h2><p>${error.message}</p></section>`;
         });
 }
+
+function loadAdsForDate(year, month, day) {
+    const adDiv = document.getElementById('ad-container');
+    const adFileName = `ad-${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
+    fetch(adFileName)
+        .then(response => {
+            if (!response.ok) throw new Error("Werbung nicht gefunden");
+            return response.text();
+        })
+        .then(html => {
+            adDiv.innerHTML = html;
+        })
+        .catch(error => {
+            adDiv.innerHTML = `<p>Keine Werbung für dieses Datum verfügbar.</p>`;
+        });
+}
+
 window.addEventListener('scroll', () => {
      console.log('Scroll detected');
     const header = document.querySelector('header');
