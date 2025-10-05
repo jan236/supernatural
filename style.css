@@ -1,7 +1,7 @@
 
 html, body {
     margin: 0;
-    font-family: "Georgia", serif;
+    font-family: 'Georgia', 'Palatino Linotype', Garamond, serif;
     height: 100%; /* Wichtig für das Hintergrundbild, damit es den ganzen Bildschirm abdeckt */
     margin: 0;
     padding: 0;
