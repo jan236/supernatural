@@ -102,6 +102,8 @@
         return cell;
     }
 
+    renderCalendar(currentYear, currentMonth);
+})();
 
 function loadArticlesForDate(year, month, day) {
     const newsArticleDiv = document.getElementById('newsarticle');
@@ -117,14 +119,10 @@ function loadArticlesForDate(year, month, day) {
         })
         .catch(error => {
             newsArticleDiv.innerHTML = `<section><h2>Keine Meldungen für dieses Datum</h2><p>${error.message}</p></section>`;
-
-
-            renderCalendar(currentYear, currentMonth);
-        })();
         });
 }
 window.addEventListener('scroll', () => {
-    console.log('Scroll detected');
+     console.log('Scroll detected');
     const header = document.querySelector('header');
     if (window.scrollY > 5) { // ab 50 Pixel scrollen
         header.classList.add('shrink');
