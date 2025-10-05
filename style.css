@@ -70,16 +70,16 @@ header {
 
 .ads {
     background: whitesmoke;
-    padding: 0.5em 0.2em;
+    padding: 0.1em 0.1em;
     text-align: center;
     width: 180px;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.5rem;
     color: #444;
     max-width: 75%; /* Bilder nehmen nur die Hälfte der Breite des Containers ein */
     height: auto; /* Bildhöhe proportional anpassen */
     display: block;
-    margin: 0.5rem auto; /* Zentrierter Abstand über und unter dem Bild */
+    margin: 0.2rem auto; /* Zentrierter Abstand über und unter dem Bild */
 }
 
 main {
