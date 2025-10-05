@@ -1,7 +1,6 @@
 body {
     margin: 0;
-    background: antiquewhite;
-    background-color:antiquewhite;
+    background: aliceblue;
     color: #222;
     font-family: "Georgia", serif;
 }
@@ -11,8 +10,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: antiquewhite;
-    background-color: antiquewhite;
+    background: aliceblue;
     color: #222;
     z-index: 10;
     border-top: 0.2em solid #000;
@@ -42,8 +40,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: antiquewhite;
-    background-color: antiquewhite;
+    background: aliceblue;
 }
 
 
@@ -63,9 +60,9 @@ header {
 
 
 .ad {
-    background: #fafafa;
+    background: aliceblue;
     border: 1px dashed #aaa;
-    padding:0.5em 0.2em;
+    padding: 0.5em 0.2em;
     text-align: center;
     width: 180px;
     margin-bottom: 2rem;
@@ -87,7 +84,7 @@ main {
 }
 
 section {
-    background: #fff;
+    background: aliceblue;
     border-bottom: 1px solid #ddd;
     padding: 2rem 2rem 1.5rem 2rem;
     margin-bottom: 2rem;
@@ -109,7 +106,7 @@ section {
 
 #calendar {
     width: 260px;
-    background: #fff;
+    background: aliceblue;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
     font-family: Arial, sans-serif;
@@ -124,7 +121,8 @@ section {
     font-size: 1.1rem;
 }
 footer {
-    padding:2em 0 2em 0;
+    padding: 2em 0 2em 0;
+    background: aliceblue;
 }
 
 
