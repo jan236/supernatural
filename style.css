@@ -93,11 +93,7 @@ main {
     min-height: 75vh;
 }
 
-#newsarticle {
-    width: 100%;
-    max-width: 90vw;
-    margin: 0 auto;
-}
+
 
     #newsarticle img {
         max-width: 90%;
