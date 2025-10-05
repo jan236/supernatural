@@ -151,7 +151,6 @@
   
 function loadArticlesForDate(year, month, day) {
     const newsArticleDiv = document.getElementById('newsarticle');
-    // z.B. Dateiformat: articles-2025-10-05.html
     const fileName = `articles-${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
     fetch(fileName)
         .then(response => {
@@ -162,7 +161,7 @@ function loadArticlesForDate(year, month, day) {
             newsArticleDiv.innerHTML = html;
         })
         .catch(error => {
-            newsArticleDiv.innerHTML = `<section><h2>Keine Meldungen für dieses Datum</h2><p>${error.message}</p></section>`;
+            newsArticleDiv.innerHTML = `<section><h2>Keine Artikel vorhanden</h2><p>${error.message}</p></section>`;
         });
 }
 
@@ -171,16 +170,17 @@ function loadAdsForDate(year, month, day) {
     const adFileName = `ad-${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
     fetch(adFileName)
         .then(response => {
-            if (!response.ok) throw new Error("Werbung nicht gefunden");
+            if (!response.ok) throw new Error("Datei nicht gefunden");
             return response.text();
         })
         .then(html => {
             adDiv.innerHTML = html;
         })
         .catch(error => {
-            adDiv.innerHTML = `<p>Keine Werbung für dieses Datum verfügbar.</p>`;
+            adDiv.innerHTML = `<p>Keine Werbung vorhanden</p>`;
         });
 }
+
 
 window.addEventListener('scroll', () => {
      console.log('Scroll detected');
@@ -191,5 +191,32 @@ window.addEventListener('scroll', () => {
         header.classList.remove('shrink');
     }
 });
+
+window.addEventListener('load', () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth();
+    const day = today.getDate();
+
+    // Funktion, um den Tag zu finden und auszuwählen
+    function selectToday() {
+        // Alle Zellen im Kalender durchgehen
+        const cells = document.querySelectorAll('#calendar td');
+        cells.forEach(cell => {
+            // Prüfen, ob die Zelle eine Zahl enthält
+            if (cell.textContent == day && cell.parentNode && cell.parentNode.parentNode) {
+                // Hier kannst du noch extra Bedingungen setzen, falls das nur für den aktuellen Monat gilt
+                // Tag auswählen
+                cell.classList.add('selected'); // optional: CSS für markierten Tag
+                // Artikel laden
+                loadArticlesForDate(year, month, day);
+            }
+        });
+    }
+
+    // Dirket nach Rendern aufrufen
+    selectToday();
+});
+
 
 
