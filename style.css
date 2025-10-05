@@ -174,36 +174,35 @@ footer {
 }
 
 @media (max-width: 600px) {
-    /* Alles block und mittig */
     .layout {
         display: block;
         width: 100%;
         padding: 0;
         margin: 0 auto;
-        text-align: center; /* Zentrale Ausrichtung */
+        text-align: center;
     }
 
     header {
         position: fixed;
         width: 100%;
         height: 3.5rem;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255,255,255,0.9);
         z-index: 1000;
         transition: opacity 0.4s ease;
-        text-align: center; /* Headerzentrierung */
+        text-align: center;
         padding: 0.5rem 0;
     }
 
     body {
-        padding-top: 4rem; /* Ausreichend Platz für fixierten Header */
+        padding-top: 4rem; /* Platz für fixierten Header */
         margin: 0;
     }
 
     #calendar {
         margin: 1rem auto;
         max-height: 40vh;
-        width: 90%; /* Breiter und zentriert */
-        overflow-y: auto; /* Vertikales Scrollen */
+        width: 90%;
+        overflow-y: auto;
         box-shadow: none;
         border: 1px solid #ccc;
         text-align: center;
@@ -213,11 +212,11 @@ footer {
         width: 95%;
         margin: 0 auto 2rem auto;
         padding: 1rem;
-        text-align: center; /* Zentrierter Hauptinhalt */
+        text-align: center;
     }
 
     #sidebarleft, #sidebarright {
-        display: none; /* Seitenleisten ausblenden */
+        display: none;
     }
 
     .ads {
@@ -229,7 +228,6 @@ footer {
         text-align: center;
     }
 
-        /* Bilder in der Werbung und Artikeln ebenfalls zentrieren und responsiv */
         #newsarticle img, .ads img {
             max-width: 100%;
             height: auto;
