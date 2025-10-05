@@ -1,7 +1,7 @@
 /* Allgemeine Schriftarten und Farben */
 
 body {
-    margin: 0 auto; /* Oben/Unten 0, Links/Rechts automatisch, zentriert den Block */
+    margin: 0rem 10rem 0rem 10rem; /* Oben/Unten 0, Links/Rechts automatisch, zentriert den Block */
     max-width: 900px; /* Beispiel-Breite, begrenzt die Breite des Inhalts */
     padding: 0 1rem; /* Innenabstand links und rechts */
     background-color: #fff;
