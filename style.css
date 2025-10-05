@@ -4,6 +4,8 @@ html, body {
     font-family: 'Georgia', 'Palatino Linotype', Garamond, serif;
     height: 100%; /* Wichtig für das Hintergrundbild, damit es den ganzen Bildschirm abdeckt */
     margin: 0;
+    display: flex;
+    flex-direction: column;
     padding-bottom: 3rem; /* Platz für Footer */
     background-image: url('Pictures/Zeitung.jpg');
     background-repeat: no-repeat;
@@ -99,6 +101,7 @@ main {
     margin-left: 1em; /* mindestens Breite von #sidebarleft */
     margin-right: 1em; /* mindestens Breite von #sidebarright */
     padding: 1rem;
+    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -172,6 +175,7 @@ section {
 }
 
 footer {
+    flex-shrink: 0;
     background-color: #222; /* dunkler Hintergrund */
     color: #eee; /* helle Schrift */
     text-align: center; /* Texte zentrieren */
