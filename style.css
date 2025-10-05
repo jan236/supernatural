@@ -71,14 +71,14 @@ section {
         text-align: justify;
         margin-top: 0;
     }
-main, #newsarticle {
+#newsarticle {
     margin: 0 auto;
     max-width: 900px;
     padding: 1rem;
 }
 
 
-main, #calendar {
+#calendar {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -92,18 +92,18 @@ main, #calendar {
     padding: 10px;
 }
 
-   main, #calendar header {
+#calendar header {
         text-align: center;
         font-weight: bold;
         margin-bottom: 10px;
     }
 
-   main, #calendar table {
+  #calendar table {
         border-collapse: collapse;
         width: 100%;
     }
 
-   main, #calendar th, #calendar td {
+#calendar th, #calendar td {
         width: 14.28%;
         text-align: center;
         padding: 5px;
