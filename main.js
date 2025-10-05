@@ -184,8 +184,6 @@ function loadAdsForDate(year, month, day) {
 }
 
 
-
-
 window.addEventListener('scroll', () => {
      console.log('Scroll detected');
     const header = document.querySelector('header');
@@ -214,6 +212,7 @@ window.addEventListener('load', () => {
                 cell.classList.add('selected'); // optional: CSS für markierten Tag
                 // Artikel laden
                 loadArticlesForDate(year, month, day);
+                loadAdsForDate(year, month, day);
             }
         });
     }
