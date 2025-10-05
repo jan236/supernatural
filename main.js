@@ -122,6 +122,7 @@ function loadArticlesForDate(year, month, day) {
         });
 }
 window.addEventListener('scroll', () => {
+    console.log('Scroll detected');
     const header = document.querySelector('header');
     if (window.scrollY > 5) { // ab 50 Pixel scrollen
         header.classList.add('shrink');

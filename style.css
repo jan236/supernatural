@@ -20,7 +20,7 @@ header {
     transition: all 0.3s ease;
 }
 
-    .shrink {
+    header.shrink {
         padding: 0.3rem 0 0.3rem 0;
         font-size: 1rem;
     }
