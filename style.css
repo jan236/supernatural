@@ -37,12 +37,31 @@ header {
 }
 
     .sidebar.left {
-        /* Optionale weitere Stile für die linke Spalte */
+        position: fixed;
+        top: 110px; /* unter dem Header platzieren, ggf. anpassen */
+        left: 0;
+        width: 200px; /* oder passend zur Werbespalte */
+        height: calc(100vh - 110px); /* Gesamte Höhe abzüglich Header */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #fff; /* optional für sauberen Hintergrund */
     }
 
+
     .sidebar.right {
-        /* Optionale weitere Stile für die rechte Spalte */
+        position: fixed;
+        top: 110px; /* unter dem Header */
+        right: 0;
+        width: 300px; /* je nach Bedarf */
+        height: calc(100vh - 110px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #fff;
+        overflow-x: visible;
     }
+
 
 .ad {
     background: #fafafa;

@@ -95,6 +95,7 @@
             }
             cell.classList.add('selected');
             selectedDate = cell;
+            loadArticlesForDate(currentYear, currentMonth, day);
             // Hier kannst du eine Aktion auslösen, z.B. Tag merken oder anzeigen
             console.log(`Ausgewählter Tag: ${day}.${currentMonth + 1}.${currentYear}`);
         });
@@ -103,3 +104,21 @@
 
     renderCalendar(currentYear, currentMonth);
 })();
+
+function loadArticlesForDate(year, month, day) {
+    const newsArticleDiv = document.getElementById('newsarticle');
+    // z.B. Dateiformat: articles-2025-10-05.html
+    const fileName = `articles-${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
+    fetch(fileName)
+        .then(response => {
+            if (!response.ok) throw new Error("Datei nicht gefunden");
+            return response.text();
+        })
+        .then(html => {
+            newsArticleDiv.innerHTML = html;
+        })
+        .catch(error => {
+            newsArticleDiv.innerHTML = `<section><h2>Keine Meldungen für dieses Datum</h2><p>${error.message}</p></section>`;
+        });
+}
+
