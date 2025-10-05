@@ -21,8 +21,8 @@ header {
 }
 
     header.shrink {
-        padding: 0.2rem 0 0.2rem 0;
-        font-size: 1rem;
+        padding: 0.1rem 0 0.1rem 0;
+        font-size: 0.6rem;
     }
 
     header.transparent {
@@ -100,8 +100,8 @@ main {
 }
 
     #newsarticle img {
-        max-width: 75%;
-        max-height: 20rem;
+        max-width: 80%;
+        max-height: 24rem;
         height: auto;
         display: block;
         margin: 1rem auto;
