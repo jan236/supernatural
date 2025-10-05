@@ -1,10 +1,10 @@
 
 html, body {
-    margin: 0;
+    margin: 1.0rem;
     font-family: 'Georgia', 'Palatino Linotype', Garamond, serif;
     height: 100%; /* Wichtig für das Hintergrundbild, damit es den ganzen Bildschirm abdeckt */
     margin: 0;
-    padding: 0;
+    padding: 1rem;
     background-image: url('Pictures/Zeitung.jpg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -56,7 +56,7 @@ header {
     position: relative;
     top: 11em; /* unter dem Header platzieren, ggf. anpassen */
     left: 0;
-    width: 40em; /* oder passend zur Werbespalte */
+    width: 10em; /* oder passend zur Werbespalte */
     height: calc(100vh - 110px); /* Gesamte Höhe abzüglich Header */
     display: flex;
     flex-direction: column;
@@ -71,7 +71,7 @@ header {
     top: 11em; /* unter dem Header */
     right: 0;
     margin-top: 2em; /* Abstand über Werbung */
-    width: 40em; /* je nach Bedarf */
+    width: 10em; /* je nach Bedarf */
     height: calc(100vh - 110px);
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@ header {
     background: transparent !important;
     padding: 0.4em;
     text-align: center;
-    width: 6rem;
+    width: 10rem;
     margin-bottom: 0.1rem;
     font-size: 0.8rem;
     color: #444;
