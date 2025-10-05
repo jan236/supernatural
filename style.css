@@ -45,7 +45,7 @@ header {
     position: relative;
     top: 11em; /* unter dem Header platzieren, ggf. anpassen */
     left: 0;
-    width: 200px; /* oder passend zur Werbespalte */
+    width: 10em; /* oder passend zur Werbespalte */
     height: calc(100vh - 110px); /* Gesamte Höhe abzüglich Header */
     display: flex;
     flex-direction: column;
@@ -59,7 +59,7 @@ header {
     top: 11em; /* unter dem Header */
     right: 0;
     margin-top: 2em; /* Abstand über Werbung */
-    width: 300px; /* je nach Bedarf */
+    width: 10em; /* je nach Bedarf */
     height: calc(100vh - 110px);
     display: flex;
     flex-direction: column;
