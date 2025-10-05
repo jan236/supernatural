@@ -121,4 +121,13 @@ function loadArticlesForDate(year, month, day) {
             newsArticleDiv.innerHTML = `<section><h2>Keine Meldungen für dieses Datum</h2><p>${error.message}</p></section>`;
         });
 }
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) { // ab 50 Pixel scrollen
+        header.classList.add('shrink');
+    } else {
+        header.classList.remove('shrink');
+    }
+});
+
 
