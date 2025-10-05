@@ -30,13 +30,7 @@ header {
     align-items: flex-start;
 }
 
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-    .sidebar left {
+    #sidebarleft {
         position: fixed;
         top: 110px; /* unter dem Header platzieren, ggf. anpassen */
         left: 0;
@@ -49,7 +43,7 @@ header {
     }
 
 
-    .sidebar right {
+    #sidebarright {
         position: fixed;
         top: 110px; /* unter dem Header */
         right: 0;
@@ -108,7 +102,7 @@ section {
         margin-top: 0;
     }
 
-.calendar {
+#calendar {
     width: 260px;
     background: #fff;
     border: 1px solid #ccc;
