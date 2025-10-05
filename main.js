@@ -140,7 +140,6 @@
             cell.classList.add('selected');
             selectedDate = cell;
             loadArticlesForDate(cellYear, cellMonth, day);
-            loadAdsForDate(cellYear, cellMonth, day);
         });
         return cell;
     }
