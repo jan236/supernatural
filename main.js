@@ -123,26 +123,42 @@
         table.appendChild(tbody);
         calendar.appendChild(table);
     }
-
-    function createDayCell(day, cellYear, cellMonth) {
-        const cell = document.createElement('td');
-        cell.textContent = day;
-        const isToday =
-            (day === now.getDate() && cellMonth === now.getMonth() && cellYear === now.getFullYear());
-        if (isToday) {
-            cell.style.border = '1px solid #007BFF';
-            cell.style.fontWeight = 'bold';
-        }
-        cell.addEventListener('click', () => {
-            if (selectedDate) {
-                selectedDate.classList.remove('selected');
-            }
-            cell.classList.add('selected');
-            selectedDate = cell;
-            loadArticlesForDate(cellYear, cellMonth, day);
-        });
-        return cell;
+function createDayCell(day, cellYear, cellMonth) {
+    const cell = document.createElement('td');
+    cell.textContent = day;
+    
+    const isToday =
+        (day === now.getDate() && cellMonth === now.getMonth() && cellYear === now.getFullYear());
+    
+    if (isToday) {
+        cell.style.border = '1px solid #007BFF';
+        cell.style.fontWeight = 'bold';
     }
+    
+    // Prüfen ob Artikel existiert
+    const fileName = `articles-${cellYear}-${String(cellMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
+    fetch(fileName, { method: 'HEAD' }) // HEAD = nur Prüfung, kein Download
+        .then(response => {
+            if (response.ok) {
+                cell.style.fontWeight = 'bold';
+                cell.style.color = '#007BFF';
+                cell.style.cursor = 'pointer';
+            }
+        })
+        .catch(() => {
+            // Keine Datei vorhanden, nichts tun
+        });
+    
+    cell.addEventListener('click', () => {
+        if (selectedDate) {
+            selectedDate.classList.remove('selected');
+        }
+        cell.classList.add('selected');
+        selectedDate = cell;
+        loadArticlesForDate(cellYear, cellMonth, day);
+    });
+    return cell;
+}
 
     renderCalendar(currentYear, currentMonth);
 })();
