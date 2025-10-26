@@ -131,7 +131,7 @@ function createDayCell(day, cellYear, cellMonth) {
         (day === now.getDate() && cellMonth === now.getMonth() && cellYear === now.getFullYear());
     
     if (isToday) {
-        cell.style.border = '1px solid #007BFF';
+        cell.style.border = '1px solid #000000';
         cell.style.fontWeight = 'bold';
     }
     
@@ -141,7 +141,7 @@ function createDayCell(day, cellYear, cellMonth) {
         .then(response => {
             if (response.ok) {
                 cell.style.fontWeight = 'bold';
-                cell.style.color = '#007BFF';
+                cell.style.color = '#000000';
                 cell.style.cursor = 'pointer';
             }
         })
