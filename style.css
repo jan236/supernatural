@@ -23,7 +23,10 @@ header {
     left: 0;
     width: 100%;
     background: white;
-    background-image: url("Pictures/AlteZeitung.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("Pictures/AlteZeitung.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     color: #222;
     z-index: 10;
     border-bottom: 0.1em solid #000;
