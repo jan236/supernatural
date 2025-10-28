@@ -118,11 +118,8 @@ main {
         height: auto;
         display: block;
         margin: 0.5rem auto;
+        font-size: 0.8em;
     }
-
-figcaption {
-    font-size: 0.6rem;
-}
 
 
 
