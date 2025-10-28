@@ -117,11 +117,11 @@ main {
         width: 100%;
         height: auto;
         display: block;
-        margin: 0.5rem auto;
+       
     }
 
 figure figcaption {
-    font-size: 0.3rem;
+    font-size: 0.5rem;
 }
 
 
