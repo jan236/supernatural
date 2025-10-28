@@ -120,9 +120,13 @@ main {
         margin-left: 0;
     }
 
+    figure {
+        margin-left: 0;
+    }
 figure figcaption {
     font-size: 0.7rem;
     text-align: left;
+    margin-left: 0;
 }
 
 
