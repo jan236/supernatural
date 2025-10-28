@@ -130,7 +130,7 @@ section {
 
 #newsarticle section h2,
 #newsarticle section p {
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -192,6 +192,6 @@ footer {
         width: 100%;
         margin: 0 auto 2rem auto;
         padding: 1rem 0;
-        text-align: left;
+        text-align: center;
     }
 }
