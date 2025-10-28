@@ -164,7 +164,7 @@ function createDayCell(day, cellYear, cellMonth) {
 })();
   
 function loadArticlesForDate(year, month, day) {
-    const newsArticleDiv = document.getElementById('newsarticle');
+    const newsArticleDiv = document.getElementById('.\Artikel\newsarticle');
     const fileName = `articles-${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
     fetch(fileName)
         .then(response => {
