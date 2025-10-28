@@ -7,17 +7,17 @@
 
     function renderCalendar(year, month) {
         calendar.innerHTML = '';
-        const monthNames = ["Januar", "Februar", "März", "April", "Mai", "Juni",
+        const monthNames = ["Januar", "Februar", "MÃ¤rz", "April", "Mai", "Juni",
             "Juli", "August", "September", "Oktober", "November", "Dezember"];
 
-        // Steuerelemente für Monat und Jahr
+        // Steuerelemente fÃ¼r Monat und Jahr
         const controls = document.createElement('div');
         controls.style.display = "flex";
         controls.style.justifyContent = "space-between";
         controls.style.alignItems = "center";
         controls.style.marginBottom = "0.5em";
 
-        // Jahr zurück
+        // Jahr zurÃ¼ck
         const prevYear = document.createElement('button');
         prevYear.textContent = "<<";
         prevYear.onclick = () => {
@@ -26,7 +26,7 @@
         };
         controls.appendChild(prevYear);
 
-        // Monat zurück
+        // Monat zurÃ¼ck
         const prevMonth = document.createElement('button');
         prevMonth.textContent = "<";
         prevMonth.onclick = () => {
@@ -135,9 +135,9 @@ function createDayCell(day, cellYear, cellMonth) {
         cell.style.fontWeight = 'bold';
     }
     
-    // Prüfen ob Artikel existiert
+    // PrÃ¼fen ob Artikel existiert
     const fileName = `Articles/articles-${cellYear}-${String(cellMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
-    fetch(fileName, { method: 'HEAD' }) // HEAD = nur Prüfung, kein Download
+    fetch(fileName, { method: 'HEAD' }) // HEAD = nur PrÃ¼fung, kein Download
         .then(response => {
             if (response.ok) {
                 cell.style.fontWeight = 'bold';
@@ -198,7 +198,7 @@ function loadAds() {
             return response.text();
         })
         .then(html => {
-            // Temporäres div um den Inhalt zu parsen
+            // TemporÃ¤res div um den Inhalt zu parsen
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = html;
 
@@ -259,16 +259,16 @@ window.addEventListener('load', () => {
     const month = today.getMonth();
     const day = today.getDate();
 
-    // Funktion, um den Tag zu finden und auszuwählen
+    // Funktion, um den Tag zu finden und auszuwÃ¤hlen
     function selectToday() {
         // Alle Zellen im Kalender durchgehen
         const cells = document.querySelectorAll('#calendar td');
         cells.forEach(cell => {
-            // Prüfen, ob die Zelle eine Zahl enthält
+            // PrÃ¼fen, ob die Zelle eine Zahl enthÃ¤lt
             if (cell.textContent == day && cell.parentNode && cell.parentNode.parentNode) {
-                // Hier kannst du noch extra Bedingungen setzen, falls das nur für den aktuellen Monat gilt
-                // Tag auswählen
-                cell.classList.add('selected'); // optional: CSS für markierten Tag
+                // Hier kannst du noch extra Bedingungen setzen, falls das nur fÃ¼r den aktuellen Monat gilt
+                // Tag auswÃ¤hlen
+                cell.classList.add('selected'); // optional: CSS fÃ¼r markierten Tag
                 // Artikel laden
                 loadArticlesForDate(year, month, day);
                 loadAds();
