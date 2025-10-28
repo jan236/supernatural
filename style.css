@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
 html, body {
     min-height: 100dvh;
     margin: 0; /* kein Margin zum Rand */
     padding: 0;
-    font-family: 'Georgia', 'Palatino Linotype', Garamond, serif;
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 16px;
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
     background-image: url('Pictures/Zeitung.jpg');
@@ -10,6 +14,15 @@ html, body {
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5em;
 }
 
     body > .layout, main {
