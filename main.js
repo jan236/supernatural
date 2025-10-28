@@ -136,7 +136,7 @@ function createDayCell(day, cellYear, cellMonth) {
     }
     
     // Prüfen ob Artikel existiert
-    const fileName = `articles-${cellYear}-${String(cellMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
+    const fileName = `Articles/articles-${cellYear}-${String(cellMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
     fetch(fileName, { method: 'HEAD' }) // HEAD = nur Prüfung, kein Download
         .then(response => {
             if (response.ok) {
