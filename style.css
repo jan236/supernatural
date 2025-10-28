@@ -114,14 +114,15 @@ main {
 }
 
     #newsarticle img {
-        width: 100%;
-        height: auto;
-        
-       
+        width: 100% !important; /* !important überschreibt inline-styles */
+        height: auto !important;
+        display: block;
+        margin-left: 0;
     }
 
 figure figcaption {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
+    text-align: left;
 }
 
 
@@ -129,7 +130,7 @@ figure figcaption {
 section {
     background: transparent !important;
     border-bottom: 1px solid #ddd;
-    padding: 2rem 2rem 1.5rem 2rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
     margin-bottom: 2rem;
     font-size: 1.5rem;
 }
