@@ -164,8 +164,8 @@ function createDayCell(day, cellYear, cellMonth) {
 })();
   
 function loadArticlesForDate(year, month, day) {
-    const newsArticleDiv = document.getElementById('.\Articles\newsarticle');
-    const fileName = `articles-${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
+    const newsArticleDiv = document.getElementById('newsarticle');
+    const fileName = `Articles/articles-${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
     fetch(fileName)
         .then(response => {
             if (!response.ok) throw new Error("kein Artikel gefunden");
