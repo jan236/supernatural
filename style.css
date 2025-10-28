@@ -120,6 +120,10 @@ main {
         margin: 0.5rem auto;
     }
 
+figcaption {
+    font-size: 0.6rem;
+}
+
 
 
 section {
@@ -127,6 +131,7 @@ section {
     border-bottom: 1px solid #ddd;
     padding: 2rem 2rem 1.5rem 2rem;
     margin-bottom: 2rem;
+    font-size: 1.5rem;
 }
 
     section h2 {
