@@ -124,7 +124,7 @@ section {
 
     section p {
         font-size: 0.8rem;
-        text-align: justify;
+        text-align: left;
         margin-top: 0;
     }
 
@@ -192,6 +192,6 @@ footer {
         width: 100%;
         margin: 0 auto 2rem auto;
         padding: 1rem 0;
-        text-align: center;
+        text-align: left;
     }
 }
