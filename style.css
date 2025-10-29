@@ -226,7 +226,11 @@ footer {
     }
     @media screen and (max-width: 768px) {
         h1, h2, h3 {
-            font-size: 75%; /* 75% der Desktop-Größe */
+            font-size: 85%;
+        }
+
+        section h2 {
+            font-size: 75%;
         }
     }
 }
