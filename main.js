@@ -173,9 +173,6 @@ function createDayCell(day, cellYear, cellMonth) {
 function loadArticlesForDate(year, month, day) {
     const newsArticleDiv = document.getElementById('newsarticle');
     const fileName = `Articles/articles-${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
-    const selectedDateDiv = document.getElementById('selected-date');
-    const formattedDate = `${String(day).padStart(2, '0')}.${String(month + 1).padStart(2, '0')}.${year}`;
-    selectedDateDiv.textContent = formattedDate;
 
     fetch(fileName)
         .then(response => {
