@@ -169,6 +169,7 @@ section {
     width: 260px;
     background: transparent !important;
     border: 0.1em solid #ccc;
+    border-bottom: none !important;
     box-shadow: 0 0 0.5em #444;
     font-family: Arial, sans-serif;
     padding: 0.2em;
@@ -196,7 +197,7 @@ section {
     padding: 0.5em;
     text-align: center; /* MITTIG */
     vertical-align: middle; /* VERTIKAL MITTIG */
-    background: rgba(255, 255, 255, 0.4); /* weißer, leicht durchsichtiger Hintergrund */
+    background: rgba(255, 255, 255, 0.7); /* weißer, leicht durchsichtiger Hintergrund */
 }
 
 /* Wochentage-Kopfzeile */
@@ -222,9 +223,7 @@ section {
     font-weight: bold;
 }
 
-#sidebarright > *:not(:last-child) {
-    border-bottom: none !important;
-}
+
 
 /* Leere Zellen (ohne Hintergrund) */
 #calendar td:empty {
