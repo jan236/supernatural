@@ -84,19 +84,20 @@ header {
 
 .ads {
     background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
     text-align: center;
     align-items: center;
-    flex-direction: column;
     width: 260px;
     font-size: 1rem;
     color: #444;
     max-width: 100%; /* Bilder nehmen nur die Hälfte der Breite des Containers ein */
     height: auto; /* Bildhöhe proportional anpassen */
-    display: flex;
     padding: 0.2em;
-    margin-top: 0.1em;
-    margin-bottom: 0.1em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
     box-shadow: 0 0 0.5em #444;
+    box-sizing: border-box;
 }
 
     .ads img {
@@ -120,7 +121,7 @@ main {
 
 #newsarticle {
     width: 100%;
-    max-width: 70vw;
+    max-width: none;
     margin: 0 auto;
 }
 
@@ -129,15 +130,20 @@ main {
         height: auto !important;
         display: block;
         margin-left: 0;
+        margin-right: 0;
     }
 
-    figure {
-        margin-left: 0;
-    }
+figure {
+    margin: 1em 0; /* NUR oben/unten margin */
+    width: 100%;
+    max-width: 100%;
+}
 
-    figcaption {
-        margin-left: 0;
-    }
+figcaption {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
 
 figure figcaption {
     font-size: 0.7rem;
@@ -151,9 +157,10 @@ figure figcaption {
 section {
     background: transparent !important;
     border-bottom: 1px solid #ddd;
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    padding: 1.5rem 0;
     margin-bottom: 2rem;
     font-size: 1.5rem;
+    width: 100%;
 }
 
     section h2 {
@@ -162,12 +169,14 @@ section {
         font-size: 1.8rem;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
+        width: 100%;
     }
 
     section p {
         font-size: 0.8rem;
         text-align: left;
         margin-top: 0;
+        width: 100%;
     }
 
 #newsarticle section h2,
@@ -185,6 +194,7 @@ section {
     padding: 0.2em;
     margin-top: 0.1em;
     margin-bottom: 0.1em;
+    box-sizing: border-box;
 }
 
     #calendar table {
