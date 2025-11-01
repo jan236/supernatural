@@ -18,7 +18,7 @@ html, body {
 
 h1, h2, h3 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 700;
+    font-weight:700;
 }
 
 h1 {
@@ -91,7 +91,6 @@ header {
     width: 260px;
     font-size: 1rem;
     color: #444;
-    max-width: 100%; /* Bilder nehmen nur die Hälfte der Breite des Containers ein */
     height: auto; /* Bildhöhe proportional anpassen */
     padding: 0.2em;
     margin-top: 0.3em;
@@ -101,7 +100,7 @@ header {
 }
 
     .ads img {
-        width: 90%; /* Bild nimmt volle Container-Breite */
+        width: 90%; 
         height: auto;
         display: block;
 
@@ -121,7 +120,6 @@ main {
 
 #newsarticle {
     width: 100%;
-    max-width: 70vw;
     margin: 0 auto;
 }
 
@@ -145,9 +143,6 @@ figure figcaption {
     text-align: left;
     margin-left: 0;
 }
-
-
-
 
 section {
     background: transparent !important;
