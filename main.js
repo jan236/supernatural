@@ -202,6 +202,7 @@ function loadAds() {
     const ad8 = document.getElementById('ad8');
     const ad9 = document.getElementById('ad9');
     const ad10 = document.getElementById('ad10');
+    const ad11 = document.getElementById('ad11');
 
     fetch('advertising.html')
         .then(response => {
@@ -222,6 +223,7 @@ function loadAds() {
             const ad8Content = tempDiv.querySelector('#ad8-content');
             const ad9Content = tempDiv.querySelector('#ad9-content');
             const ad10Content = tempDiv.querySelector('#ad10-content');
+            const ad11Content = tempDiv.querySelector('#ad11-content');
 
             ad1.innerHTML = ad1Content ? ad1Content.innerHTML : '<p>Keine Werbung</p>';
             ad2.innerHTML = ad2Content ? ad2Content.innerHTML : '<p>Keine Werbung</p>';
@@ -233,6 +235,7 @@ function loadAds() {
             ad8.innerHTML = ad8Content ? ad8Content.innerHTML : '<p>Keine Werbung</p>';
             ad9.innerHTML = ad9Content ? ad9Content.innerHTML : '<p>Keine Werbung</p>';
             ad10.innerHTML = ad10Content ? ad10Content.innerHTML : '<p>Keine Werbung</p>';
+            ad11.innerHTML = ad11Content ? ad11Content.innerHTML : '<p>Keine Werbung</p>';
         })
         .catch(() => {
             ad1.innerHTML = '<p>Keine Werbung</p>';
@@ -245,6 +248,7 @@ function loadAds() {
             ad8.innerHTML = '<p>Keine Werbung</p>';
             ad9.innerHTML = '<p>Keine Werbung</p>';
             ad10.innerHTML = '<p>Keine Werbung</p>';
+            ad11.innerHTML = '<p>Keine Werbung</p>';
         });
 }
 
