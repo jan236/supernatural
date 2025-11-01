@@ -83,9 +83,10 @@ header {
 }
 
 .ads {
-    background: transparent !important;
+  
     background-color: rgba(255, 255, 255, 0.4);
     text-align: center;
+    align-items: center;
     width: 260px;
     font-size: 1rem;
     color: #444;
@@ -101,6 +102,7 @@ header {
         width: 90%; /* Bild nimmt volle Container-Breite */
         height: auto;
         display: block;
+
     }
 
 main {
