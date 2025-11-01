@@ -123,46 +123,46 @@
         table.appendChild(tbody);
         calendar.appendChild(table);
     }
-function createDayCell(day, cellYear, cellMonth) {
-    const cell = document.createElement('td');
-    cell.textContent = day;
-    
-    const isToday =
-        (day === now.getDate() && cellMonth === now.getMonth() && cellYear === now.getFullYear());
-    
-    if (isToday) {
-        cell.style.border = '1px solid #000000';
-        cell.style.fontWeight = 'bold';
-    }
-    
-    // Prüfen ob Artikel existiert
-    const fileName = `Articles/articles-${cellYear}-${String(cellMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
-    fetch(fileName, { method: 'HEAD' }) // HEAD = nur Prüfung, kein Download
-        .then(response => {
-            if (response.ok) {
-                cell.style.fontWeight = 'bold';
-                cell.style.color = '#000000';
-                cell.style.cursor = 'pointer';
-            }
-        })
-        .catch(() => {
-            // Keine Datei vorhanden, nichts tun
-        });
-    
-    cell.addEventListener('click', () => {
-        if (selectedDate) {
-            selectedDate.classList.remove('selected');
+    function createDayCell(day, cellYear, cellMonth) {
+        const cell = document.createElement('td');
+        cell.textContent = day;
+
+        const isToday =
+            (day === now.getDate() && cellMonth === now.getMonth() && cellYear === now.getFullYear());
+
+        if (isToday) {
+            cell.style.border = '1px solid #000000';
+            cell.style.fontWeight = 'bold';
         }
-        cell.classList.add('selected');
-        selectedDate = cell;
-        loadArticlesForDate(cellYear, cellMonth, day);
-    });
-    return cell;
-}
+
+        // Prüfen ob Artikel existiert
+        const fileName = `Articles/articles-${cellYear}-${String(cellMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
+        fetch(fileName, { method: 'HEAD' }) // HEAD = nur Prüfung, kein Download
+            .then(response => {
+                if (response.ok) {
+                    cell.style.fontWeight = 'bold';
+                    cell.style.color = '#000000';
+                    cell.style.cursor = 'pointer';
+                }
+            })
+            .catch(() => {
+                // Keine Datei vorhanden, nichts tun
+            });
+
+        cell.addEventListener('click', () => {
+            if (selectedDate) {
+                selectedDate.classList.remove('selected');
+            }
+            cell.classList.add('selected');
+            selectedDate = cell;
+            loadArticlesForDate(cellYear, cellMonth, day);
+        });
+        return cell;
+    }
 
     renderCalendar(currentYear, currentMonth);
 })();
-  
+
 function loadArticlesForDate(year, month, day) {
     const newsArticleDiv = document.getElementById('newsarticle');
     const fileName = `Articles/articles-${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}.html`;
@@ -193,7 +193,7 @@ function loadAds() {
     const ad8 = document.getElementById('ad8');
     const ad9 = document.getElementById('ad9');
     const ad10 = document.getElementById('ad10');
-   
+
 
     fetch('advertising.html')
         .then(response => {
@@ -245,7 +245,7 @@ function loadAds() {
 
 
 window.addEventListener('scroll', () => {
-     console.log('Scroll detected');
+    console.log('Scroll detected');
     const header = document.querySelector('header');
     if (window.scrollY > 5) { // ab 50 Pixel scrollen
         header.classList.add('shrink');
@@ -282,6 +282,73 @@ window.addEventListener('load', () => {
 
     // Dirket nach Rendern aufrufen
     selectToday();
+});
+
+// Datumseingabe-Funktionalität
+window.addEventListener('load', () => {
+    const dateInput = document.getElementById('date-input');
+    const gotoDateBtn = document.getElementById('goto-date-btn');
+
+    // Heute als Standard setzen
+    const today = new Date();
+    dateInput.valueAsDate = today;
+
+    // Button-Click Handler
+    gotoDateBtn.addEventListener('click', () => {
+        jumpToDate();
+    });
+
+    // Enter-Taste im Input
+    dateInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            jumpToDate();
+        }
+    });
+
+    // Mobile: Input öffnet direkt den Date-Picker
+    dateInput.addEventListener('focus', () => {
+        if (window.innerWidth <= 600) {
+            dateInput.showPicker(); // Öffnet den nativen Date-Picker auf Mobile
+        }
+    });
+
+    function jumpToDate() {
+        const selectedDateValue = dateInput.value;
+        if (!selectedDateValue) {
+            alert('Bitte wählen Sie ein Datum aus.');
+            return;
+        }
+
+        const [year, month, day] = selectedDateValue.split('-').map(Number);
+
+        // Kalender zu diesem Monat/Jahr rendern
+        currentYear = year;
+        currentMonth = month - 1; // Monate sind 0-basiert
+        renderCalendar(currentYear, currentMonth);
+
+        // Nach dem Rendern die Zelle auswählen
+        setTimeout(() => {
+            const cells = document.querySelectorAll('#calendar td');
+            cells.forEach(cell => {
+                if (cell.textContent == day && !cell.classList.contains('empty')) {
+                    // Vorherige Selection entfernen
+                    if (selectedDate) {
+                        selectedDate.classList.remove('selected');
+                    }
+
+                    // Neue Zelle auswählen
+                    cell.classList.add('selected');
+                    selectedDate = cell;
+
+                    // Artikel laden
+                    loadArticlesForDate(year, month - 1, day);
+
+                    // Zur Zelle scrollen (optional)
+                    cell.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        }, 100);
+    }
 });
 
 
