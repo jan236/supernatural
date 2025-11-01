@@ -150,6 +150,7 @@ section {
     background: transparent !important;
     border-bottom: 1px solid #ddd;
     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    margin-left: 0;
     margin-bottom: 2rem;
     font-size: 2rem;
     width: 100% !important;
@@ -159,6 +160,7 @@ section {
         font-family: 'Merriweather', Georgia, serif;
         font-weight: bold;
         font-size: 1.8rem;
+        margin-left: 0;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
         text-align: center;
