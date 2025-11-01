@@ -96,7 +96,7 @@ header {
    =================================== */
 #sidebarleft,
 #sidebarright {
-    margin-top: 11em;
+    margin-top: 25em;
     min-width: 15vw;
     width: 15em;
     min-height: 70vh;
@@ -318,7 +318,7 @@ footer {
 }
 
 #date-input {
-    padding: 0.3em;
+    padding: 0.5em;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 0.9rem;
@@ -329,13 +329,13 @@ footer {
 }
 
 #goto-date-btn {
-    padding: 0.3em;
+    padding: 0.5em;
     background-color: #2196F3;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 0.5em;
+    margin-top: 0.2em;
     font-size: 0.9rem;
     transition: background-color 0.3s ease;
     width: 260px;
