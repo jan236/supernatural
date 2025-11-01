@@ -167,7 +167,7 @@ section {
 
 #calendar {
     width: 260px;
-    background-color: white;
+    background: transparent !important;
     border: 0.1em solid #ccc;
     box-shadow: 0 0 0.5em #444;
     font-family: Arial, sans-serif;
@@ -230,10 +230,8 @@ section {
     border: none !important;
 }
 
-#calendar + .ads {
-    border-top: none !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+#calendar:empty {
+    display: none !important;
 }
 
 footer {
