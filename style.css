@@ -169,7 +169,7 @@ section {
     width: 260px;
     background: transparent !important;
     border: 0.1em solid #ccc;
-    box-shadow: 0 0 0.5em rgba(0,0,0,0.2);
+    box-shadow: 0 0 0.5em #444;
     font-family: Arial, sans-serif;
     padding: 0.2em;
     margin-top: 0.1em;
