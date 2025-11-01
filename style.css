@@ -322,8 +322,7 @@ footer {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 0.9rem;
-    width: 100%;
-    max-width: 200px;
+    width: 260px;
     box-sizing: border-box;
 }
 
@@ -337,6 +336,7 @@ footer {
     margin-top: 0.5em;
     font-size: 0.9rem;
     transition: background-color 0.3s ease;
+    width: 260px;
 }
 
     #goto-date-btn:hover {
