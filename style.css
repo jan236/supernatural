@@ -179,7 +179,7 @@ section {
     #calendar table {
         border-collapse: collapse;
         width: 100%;
-        background: rgba(255, 255, 255, 0.7); /* weißer, leicht durchsichtiger Hintergrund */
+        background: rgba(255, 255, 255, 0.4); /* weißer, leicht durchsichtiger Hintergrund */
     }
 
 
@@ -196,7 +196,7 @@ section {
     padding: 0.5em;
     text-align: center; /* MITTIG */
     vertical-align: middle; /* VERTIKAL MITTIG */
-    background: rgba(255, 255, 255, 0.8); /* weißer, leicht durchsichtiger Hintergrund */
+    background: rgba(255, 255, 255, 0.4); /* weißer, leicht durchsichtiger Hintergrund */
 }
 
 /* Wochentage-Kopfzeile */
@@ -204,7 +204,7 @@ section {
     border: 1px solid #ddd;
     padding: 0.5em;
     text-align: center; /* MITTIG */
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgb(104, 100, 100, 0,30);
     font-weight: bold;
 }
 
@@ -218,16 +218,13 @@ section {
 /* Heutiger Tag */
 #calendar td.today {
     border: 3px solid #FF6B6B !important;
-    background-color: rgba(255, 229, 229, 0.9) !important;
+    background-color: rgba(255, 229, 229, 0.4) !important;
     font-weight: bold;
 }
 
-/* Rahmen unter Kalender entfernen */
-#calendar::after,
-#calendar::before {
-    display: none;
+#sidebarright > *:not(:last-child) {
+    border-bottom: none !important;
 }
-
 
 /* Leere Zellen (ohne Hintergrund) */
 #calendar td:empty {
