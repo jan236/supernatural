@@ -84,6 +84,7 @@ header {
 
 .ads {
     background: transparent !important;
+    backgorund-color: rgba(255, 255, 255, 0.4);
     text-align: center;
     width: 12rem;
     font-size: 1rem;
