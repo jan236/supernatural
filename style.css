@@ -1,8 +1,15 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+﻿/* ===================================
+   FONTS IMPORT
+   =================================== */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
+
+/* ===================================
+   BASIC ELEMENTS
+   =================================== */
 html, body {
     min-height: 100dvh;
-    margin: 0; /* kein Margin zum Rand */
+    margin: 0;
     padding: 0;
     font-family: 'Merriweather', Georgia, serif;
     font-size: 16px;
@@ -16,20 +23,28 @@ html, body {
     background-attachment: fixed;
 }
 
+    body > .layout,
+    main {
+        flex: 1;
+    }
+
+
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
 h1, h2, h3 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-weight:700;
+    font-weight: 700;
 }
 
 h1 {
     font-size: 2.5em;
 }
 
-body > .layout, main {
-    flex: 1; /* Hauptinhalt wächst und zieht Footer nach unten */
-}
 
-
+/* ===================================
+   HEADER
+   =================================== */
 header {
     position: fixed;
     top: 0;
@@ -43,7 +58,7 @@ header {
     color: #222;
     z-index: 10;
     border-bottom: 0.05em solid #000;
-    padding: 0.1rem 0 0.1rem 0;
+    padding: 0.1rem 0;
     text-align: center;
     font-size: 1.3rem;
     transition: all 0.3s ease;
@@ -51,19 +66,23 @@ header {
 }
 
     header.shrink {
-        padding: 0.1rem 0 0.1rem 0;
+        padding: 0.1rem 0;
         font-size: 0.6rem;
     }
 
     header.transparent {
-        opacity: 0.9; /* Hier kannst du den Transparenzgrad anpassen (z.B. 0.6 bis 0.9) */
+        opacity: 0.9;
         transition: opacity 0.4s ease;
     }
 
+
+/* ===================================
+   LAYOUT STRUCTURE
+   =================================== */
 .layout {
     display: grid;
     grid-template-columns: 20em 4fr 20em;
-    flex-grow: 1; /* nimmt max. Platz ein */
+    flex-grow: 1;
     margin: 0 auto;
     padding-top: 1em;
     gap: 0.5em;
@@ -71,7 +90,12 @@ header {
     align-items: flex-start;
 }
 
-#sidebarleft, #sidebarright {
+
+/* ===================================
+   SIDEBARS
+   =================================== */
+#sidebarleft,
+#sidebarright {
     margin-top: 11em;
     min-width: 15vw;
     width: 15em;
@@ -83,6 +107,10 @@ header {
     padding: 2em;
 }
 
+
+/* ===================================
+   ADVERTISEMENTS (ADS)
+   =================================== */
 .ads {
     background-color: rgba(255, 255, 255, 0.5);
     display: flex;
@@ -90,23 +118,26 @@ header {
     text-align: center;
     align-items: center;
     width: 260px;
-    font-size: 1rem !important;
+    font-size: 0.8rem; /* Gleich wie Artikel-Text */
     color: #444;
-    height: auto; /* Bildhöhe proportional anpassen */
+    height: auto;
     padding: 0.2em;
     margin-top: 0.3em;
     margin-bottom: 0.3em;
+    box-sizing: border-box;
     box-shadow: 0 0 0.5em #444;
-  
 }
 
     .ads img {
-        width: 80%; 
+        width: 80%;
         height: auto;
         display: block;
-
     }
 
+
+/* ===================================
+   MAIN CONTENT AREA
+   =================================== */
 main {
     margin-top: 10em;
     margin-left: 1em;
@@ -114,7 +145,7 @@ main {
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     min-height: 70vh;
     min-width: 40vw;
 }
@@ -125,36 +156,17 @@ main {
 }
 
 
-
-    #newsarticle img {
-        width: 100% !important; /* !important überschreibt inline-styles */
-        height: auto !important;
-        display: block;
-        margin-left: 0;
-    }
-
-    figure {
-        margin-left: 0;
-    }
-
-    figcaption {
-        margin-left: 0;
-    }
-
-figure figcaption {
-    font-size: 0.7rem;
-    text-align: left;
-    margin-left: 0;
-}
-
+/* ===================================
+   ARTICLE SECTIONS
+   =================================== */
 section {
     background: transparent !important;
     border-bottom: 1px solid #ddd;
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    padding: 1.5rem 0;
     margin-left: 0;
     margin-bottom: 2rem;
-    font-size: 1.5rem !important;
-    width: 100% !important;
+    font-size: 0.8rem; /* Gleich wie Ads */
+    width: 100%;
 }
 
     section h2 {
@@ -164,21 +176,50 @@ section {
         margin-left: 0;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
-  
     }
 
     section p {
         font-size: 0.8rem;
         text-align: left;
         margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
 
 #newsarticle section h2,
 #newsarticle section p {
     text-align: left;
+    width: 100%;
 }
 
 
+/* ===================================
+   IMAGES AND FIGURES
+   =================================== */
+#newsarticle img {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+figure {
+    margin: 1em 0;
+    width: 100%;
+}
+
+figcaption {
+    font-size: 0.7rem;
+    text-align: left;
+    margin-left: 0;
+    padding-top: 0.5em;
+}
+
+
+/* ===================================
+   CALENDAR
+   =================================== */
 #calendar {
     width: 260px;
     background: transparent !important;
@@ -188,15 +229,18 @@ section {
     padding: 0.2em;
     margin-top: 0.1em;
     margin-bottom: 0.1em;
-     
+    box-sizing: border-box;
 }
+
+    #calendar:empty {
+        display: none !important;
+    }
 
     #calendar table {
         border-collapse: collapse;
         width: 100%;
-        background: rgba(255, 255, 255, 0.4); /* weißer, leicht durchsichtiger Hintergrund */
+        background: rgba(255, 255, 255, 0.4);
     }
-
 
 .calendar-title {
     text-align: center;
@@ -205,50 +249,49 @@ section {
     font-size: 1rem;
 }
 
+/* Calendar Table Headers */
+#calendar th {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    text-align: center;
+    background-color: rgba(104, 100, 100, 0.3);
+    font-weight: bold;
+}
+
+/* Calendar Table Cells */
 #calendar td {
     cursor: pointer;
     border: 1px solid #ddd;
     padding: 0.5em;
-    text-align: center; /* MITTIG */
-    vertical-align: middle; /* VERTIKAL MITTIG */
-    background: rgba(255, 255, 255, 0.7); /* weißer, leicht durchsichtiger Hintergrund */
+    text-align: center;
+    vertical-align: middle;
+    background: rgba(255, 255, 255, 0.7);
 }
 
-/* Wochentage-Kopfzeile */
-#calendar th {
-    border: 1px solid #ddd;
-    padding: 0.5em;
-    text-align: center; /* MITTIG */
-    background-color: rgb(104, 100, 100, 0,30);
-    font-weight: bold;
-}
+    #calendar td:empty {
+        background: transparent !important;
+        border: none !important;
+    }
 
-    #calendar td.selected {
-        background-color: #E3F2FD; /* helles Blau */
-        color: #0D47A1 !important; /* dunkelblaue Schrift */
-        border: 2px solid #2196F3 !important; /* blauer Rahmen */
+    /* Today's Date */
+    #calendar td.today {
+        border: 3px solid #FF6B6B !important;
+        background-color: rgba(255, 229, 229, 0.4) !important;
         font-weight: bold;
     }
 
-/* Heutiger Tag */
-#calendar td.today {
-    border: 3px solid #FF6B6B !important;
-    background-color: rgba(255, 229, 229, 0.4) !important;
-    font-weight: bold;
-}
+    /* Selected Date */
+    #calendar td.selected {
+        background-color: #E3F2FD !important;
+        color: #0D47A1 !important;
+        border: 2px solid #2196F3 !important;
+        font-weight: bold;
+    }
 
 
-
-/* Leere Zellen (ohne Hintergrund) */
-#calendar td:empty {
-    background: transparent !important;
-    border: none !important;
-}
-
-#calendar:empty {
-    display: none !important;
-}
-
+/* ===================================
+   FOOTER
+   =================================== */
 footer {
     padding: 0.5rem 1rem;
     background-color: #222;
@@ -257,10 +300,13 @@ footer {
     font-size: 0.9rem;
     box-shadow: 0 -2px 4px rgba(0,0,0,0.3);
     user-select: none;
-    flex-shrink: 0; /* Verhindert schrumpfen */
+    flex-shrink: 0;
 }
 
 
+/* ===================================
+   MEDIA QUERIES - MOBILE
+   =================================== */
 @media (max-width: 600px) {
     .layout {
         display: flex;
@@ -271,55 +317,59 @@ footer {
         text-align: center;
     }
 
+    header {
+        margin-bottom: 10px;
+    }
 
     main {
         margin-top: 20px;
-
-    }
-    header{
-        margin-bottom: 10px;
-       
-    }
-
-    #calendar {
-        order: -1; /* Ganz nach oben */
-        margin: 1rem auto;
-    }
-
-
-    #sidebarleft, #sidebarright {
-        order: 1;
-    }
-
-    #sidebarleft, #sidebarright {
-        display: block; /* Volle Breite */
-        width: 100%;
-        height: auto; /* Höhe passt sich Inhalt an */
-        margin: 0 auto 1rem auto;
-        position: relative;
-        overflow: visible;
-        padding: 1rem 0;
-    }
-
-    .ads {
-          display: none !important;
-
-    }
-
-    main {
         width: 100%;
         margin: 0 auto 2rem auto;
         padding: 1rem 0;
         text-align: left;
         order: 0;
     }
-    @media screen and (max-width: 768px) {
-        h1, h2, h3 {
-            font-size: 85%;
-        }
 
-        section h2 {
-            font-size: 75%;
-        }
+    /* Calendar on top in mobile */
+    #calendar {
+        order: -1;
+        margin: 1rem auto;
+    }
+
+    /* Sidebars below */
+    #sidebarleft,
+    #sidebarright {
+        order: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 auto 1rem auto;
+        position: relative;
+        overflow: visible;
+        padding: 1rem 0;
+    }
+
+    /* Hide ads on mobile */
+    .ads {
+        display: none !important;
+    }
+
+    /* Smaller headings on mobile */
+    h1, h2, h3 {
+        font-size: 85%;
+    }
+
+    section h2 {
+        font-size: 75%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1, h2, h3 {
+        font-size: 85%;
+    }
+
+    section h2 {
+        font-size: 75%;
     }
 }
