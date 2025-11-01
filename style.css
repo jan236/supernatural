@@ -93,6 +93,7 @@ header {
     display: block;
     margin: 0.5rem auto; /* Zentrierter Abstand über und unter dem Bild */
     padding: 1rem;
+    box-shadow: 0 0 0.5em #444;
 }
 
 main {
