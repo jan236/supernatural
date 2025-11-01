@@ -123,6 +123,8 @@ main {
     margin: 0 auto;
 }
 
+
+
     #newsarticle img {
         width: 100% !important; /* !important überschreibt inline-styles */
         height: auto !important;
@@ -149,7 +151,8 @@ section {
     border-bottom: 1px solid #ddd;
     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
     margin-bottom: 2rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    width: 100% !important;
 }
 
     section h2 {
@@ -158,6 +161,7 @@ section {
         font-size: 1.8rem;
         margin-bottom: 0.5rem;
         text-transform: uppercase;
+        text-align: center;
     }
 
     section p {
