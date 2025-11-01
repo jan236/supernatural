@@ -84,9 +84,9 @@ header {
 
 .ads {
     background: transparent !important;
-    backgorund-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
     text-align: center;
-    width: 12rem;
+    width: 260px;
     font-size: 1rem;
     color: #444;
     max-width: 90%; /* Bilder nehmen nur die Hälfte der Breite des Containers ein */
@@ -96,6 +96,12 @@ header {
     padding: 1rem;
     box-shadow: 0 0 0.5em #444;
 }
+
+    .ads img {
+        width: 90%; /* Bild nimmt volle Container-Breite */
+        height: auto;
+        display: block;
+    }
 
 main {
     margin-top: 10em;
@@ -250,11 +256,22 @@ footer {
 
 @media (max-width: 600px) {
     .layout {
-        display: block; /* Alle drei Bereiche untereinander */
+        display: flex;
+        flex-direction: column;
         margin: 0 auto;
         padding: 0 1rem;
         max-width: 100%;
         text-align: center;
+    }
+
+    #calendar {
+        order: -1; /* Ganz nach oben */
+        margin: 1rem auto;
+    }
+
+
+    #sidebarleft, #sidebarright {
+        order: 1;
     }
 
     #sidebarleft, #sidebarright {
@@ -277,6 +294,7 @@ footer {
         margin: 0 auto 2rem auto;
         padding: 1rem 0;
         text-align: left;
+        order: 0;
     }
     @media screen and (max-width: 768px) {
         h1, h2, h3 {
