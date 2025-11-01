@@ -83,7 +83,7 @@ header {
 }
 
 .ads {
-   
+    background: transparent !important;
     backgorund-color: rgba(255, 255, 255, 0.4);
     text-align: center;
     width: 12rem;
@@ -267,8 +267,9 @@ footer {
         padding: 1rem 0;
     }
 
-    ads {
-        display: none !important;
+    .ads {
+          display: none !important;
+
     }
 
     main {
