@@ -169,7 +169,6 @@ section {
     width: 260px;
     background: transparent !important;
     border: 0.1em solid #ccc;
-    border-bottom: none !important;
     box-shadow: 0 0 0.5em #444;
     font-family: Arial, sans-serif;
     padding: 0.2em;
@@ -211,7 +210,7 @@ section {
 
     #calendar td.selected {
         background-color: #E3F2FD; /* helles Blau */
-        color: #0D47A1; /* dunkelblaue Schrift */
+        color: #0D47A1 !important; /* dunkelblaue Schrift */
         border: 2px solid #2196F3 !important; /* blauer Rahmen */
         font-weight: bold;
     }
@@ -229,6 +228,12 @@ section {
 #calendar td:empty {
     background: transparent !important;
     border: none !important;
+}
+
+#calendar + .ads {
+    border-top: none !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 
 footer {

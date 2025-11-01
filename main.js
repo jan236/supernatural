@@ -273,6 +273,7 @@ window.addEventListener('load', () => {
                 // Tag auswählen
                 cell.classList.add('selected'); // optional: CSS für markierten Tag
                 // Artikel laden
+                selectedDate = cell;
                 loadArticlesForDate(year, month, day);
                 loadAds();
             }
