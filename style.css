@@ -124,7 +124,6 @@ header {
     padding: 0.2em;
     margin-top: 0.3em;
     margin-bottom: 0.3em;
-    box-sizing: border-box;
     box-shadow: 0 0 0.5em #444;
 }
 
@@ -165,7 +164,7 @@ section {
     padding: 1.5rem 0;
     margin-left: 0;
     margin-bottom: 2rem;
-    font-size: 0.8rem; /* Gleich wie Ads */
+    font-size: 1.2rem; /* Gleich wie Ads */
     width: 100%;
 }
 
